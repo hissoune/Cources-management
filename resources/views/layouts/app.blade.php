@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="{{ asset('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css') }}" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     <div class="min-h-screen bg-gray-50/50">
@@ -42,19 +44,15 @@
               </button>
             </div>
             <div class="w-full p-6 overflow-x-scroll px-0 pt-0 pb-2">
-              {{-- @if($errors->any())
-              <div class="flex justify-center">
-              <div class="bg-red-100 border border-red-400 w-1/2  text-red-700 px-4 py-3 rounded relative" role="alert">
-                  <strong class="font-bold">Oops!</strong>
-                  <span class="block sm:inline">Something went wrong:</span>
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-            </div>
-          @endif --}}
+              @if (session('success'))
+                  <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                      <span class="block sm:inline">{{ session('success') }}</span>
+                      <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+                          <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 1 .707.707L10.707 10l4.348 4.348a.5.5 0 0 1-.707.707L10 10.707l-4.348 4.348a.5.5 0 0 1-.707-.707L9.293 10 4.945 5.652a.5.5 0 0 1 .707-.707L10 9.293l4.348-4.348z"/></svg>
+                      </button>
+                  </div>
+              @endif
+
               <div>{{ $slot }}</div>
             </div>
           </div>

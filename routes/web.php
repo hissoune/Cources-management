@@ -43,10 +43,13 @@ Route::middleware(['auth','role:director'])->group(function(){
 });
 
 Route::middleware(['auth','role:teacher'])->group(function(){
-    Route::get('/teacher', function () {
-        return view('teacher');
-    })->name('teacher');
+    Route::get('/teacher', function () {return view('teacher');})->name('teacher');
     Route::resource('/Courses',CourseController::class );
+    Route::get('show_reservation',[Reservationcontroller::class,'show_reservation'])->name('show_reservation');
+    Route::get('show_students',[Reservationcontroller::class,'show_students'])->name('show_students');
+    Route::put('accept_reservation/{item}',[Reservationcontroller::class,'accept_reservation'])->name('accept_reservation');
+    Route::put('refiouse_reservation/{item}',[Reservationcontroller::class,'refiouse_reservation'])->name('refiouse_reservation');
+
 });
 Route::middleware(['auth','role:student'])->group(function(){
     Route::post('reserve_espec/{cor}',[Reservationcontroller::class,'reserve_espec'])->name('reserve_espec');
