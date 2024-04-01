@@ -52,10 +52,8 @@
                             @method('put')
                             <button class="btn bg-red-500 text-white rounded p-1">regect</button>
                           </form>
-                          <form action="" method="post" >
+                          <form action="{{ route('evaluate_student',['student'=>$item->user]) }}"  >
                                @csrf
-                               @method('put')
-                         
                             <button class="btn bg-green-500 text-white rounded p-1">evaluate</button>
                           </form>
                         </td> 

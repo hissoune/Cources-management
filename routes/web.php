@@ -7,6 +7,7 @@ use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FillierController;
+use App\Http\Controllers\Evaluationcontroller;
 use App\Http\Controllers\Reservationcontroller;
 
 /*
@@ -46,13 +47,16 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::get('/teacher', function () {return view('teacher');})->name('teacher');
     Route::resource('/Courses',CourseController::class );
     Route::get('show_reservation',[Reservationcontroller::class,'show_reservation'])->name('show_reservation');
-    Route::get('show_students',[Reservationcontroller::class,'show_students'])->name('show_students');
+    Route::get('show_studentss',[Reservationcontroller::class,'show_students'])->name('show_studentss');
     Route::put('accept_reservation/{item}',[Reservationcontroller::class,'accept_reservation'])->name('accept_reservation');
+    Route::get('evaluate_student/{student}',[Evaluationcontroller::class,'evaluate_student'])->name('evaluate_student');
+    Route::post('evaluate_s',[Evaluationcontroller::class,'evaluate_s'])->name('evaluate_s');
     Route::put('refiouse_reservation/{item}',[Reservationcontroller::class,'refiouse_reservation'])->name('refiouse_reservation');
 
 });
 Route::middleware(['auth','role:student'])->group(function(){
     Route::post('reserve_espec/{cor}',[Reservationcontroller::class,'reserve_espec'])->name('reserve_espec');
+    Route::get('show_notes',[Evaluationcontroller::class,'show_notes'])->name('show_notes');
 
 });
 

@@ -17,10 +17,10 @@ class Reservationcontroller extends Controller
                 'user_id' => $student->id,
                 'cource_id' => $cor->id,
             ]);
-            Mail::send('emails.reservation_asc', ['course' => $cor,'student'=>$student], function ($message) use ($student) {
-                $message->to($student->email)
-                        ->subject('Reservation Confirmation');
-            });
+             Mail::send('emails.reservation_asc', ['course' => $cor,'student'=>$student], function ($message) use ($student) {
+                 $message->to($student->email)
+                         ->subject('Reservation Confirmation');
+             });
             return back()->with('success', 'Your reservation completed. Please check your email.');
         } catch (\Exception $e) {
            

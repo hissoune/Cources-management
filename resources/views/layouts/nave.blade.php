@@ -41,7 +41,7 @@
                                 @endrole
                                 @role('student')
                     <li class="nav-item list-style">
-                        <a class="nav-link" href="#">your notes</a>
+                        <a class="nav-link" href="{{ route('show_notes') }}">your notes</a>
                     </li>
                      @endrole
                                 <a class="dropdown-item dropdown-style" href="{{ route('logout') }}">logout</a>
