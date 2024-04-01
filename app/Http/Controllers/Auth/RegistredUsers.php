@@ -34,6 +34,7 @@ class RegistredUsers extends Controller
             'email' => ['required', 'string', 'email', 'unique:users'], 
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role'=>'required',
+            'image'=>'required',
             
         ]);
         if($request->role == 'student'){
@@ -41,12 +42,18 @@ class RegistredUsers extends Controller
         }else{
             $role='teacher';
         }
+
+        if($request->hasFile('image')){
+            $validatedData['image']=$request->file('image')->store('user_image','public');
+            
+        } 
         
        
        $user=User::create([
         'name'=>$request->name,
         'email'=>$request->email,
         'password'=>$request->password,
+        'image'=>$validatedData['image'],
         
        ]);
        auth()->login($user);
