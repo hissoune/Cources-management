@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Course;
+use App\Models\Follow;
 use App\Models\Fillier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class homecontroller extends Controller
 {
@@ -27,7 +29,9 @@ class homecontroller extends Controller
         return view('client.teacheres',compact('Teachers'));
     }
     public function teacheres_profile(User $Teacher){
-        return view('client.techer_profile',compact('Teacher'));
+        $follow=Follow::where('teacher_id',$Teacher->id)->where('student_id',Auth::id())->first();
+
+        return view('client.techer_profile',compact('Teacher','follow'));
     }
 
     public function filliers(){

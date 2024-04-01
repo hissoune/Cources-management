@@ -123,10 +123,10 @@
             </footer>
             
                        
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="owlcarousel/owl.carousel.min.js"></script>
-    <script src="./js/js.js"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('./js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('./js/js.js') }}"></script>
 
     </body>
 </html> 

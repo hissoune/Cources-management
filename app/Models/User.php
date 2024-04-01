@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Role;
+use App\Models\Follow;
 use App\Mail\VerifyEmail;
 use Illuminate\Http\Request;
 use App\Models\model_has_role;
@@ -92,4 +93,9 @@ public function hasVerifiedEmail(){
          public function Coureces(){
             return $this->hasMany(Course::class,'users_id');
          }
-}
+         public function followers(){
+            return $this->hasMany(Follow::class,'teacher_id');
+        }
+
+        }
+

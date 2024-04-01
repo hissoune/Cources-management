@@ -1,5 +1,5 @@
-<x-home-layout>
+<x-app-layout>
     <x-slot name="slot">
 {{ $evaluation }}
     </x-slot>
-</x-home-layout>
+</x-app-layout>

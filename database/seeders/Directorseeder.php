@@ -17,6 +17,7 @@ class Directorseeder extends Seeder
             'name'=>'Director',
             'email'=>'Director@gmail.com',
             'password'=>'password',
+            'image'=>'public/Courses\1w4LPl8tYBou3ihcbeaNccMl0x5UWtsdjHGTCFbq.webp',
             'email_verified_at'=>now(),    
            ]);
            $user->AssignRole('director');

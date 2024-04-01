@@ -50,13 +50,17 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::get('show_studentss',[Reservationcontroller::class,'show_students'])->name('show_studentss');
     Route::put('accept_reservation/{item}',[Reservationcontroller::class,'accept_reservation'])->name('accept_reservation');
     Route::get('evaluate_student/{student}',[Evaluationcontroller::class,'evaluate_student'])->name('evaluate_student');
-    Route::post('evaluate_s',[Evaluationcontroller::class,'evaluate_s'])->name('evaluate_s');
     Route::put('refiouse_reservation/{item}',[Reservationcontroller::class,'refiouse_reservation'])->name('refiouse_reservation');
+    Route::get('show_notes',[Evaluationcontroller::class,'show_notes'])->name('show_notes');
+    Route::get('followers',[Evaluationcontroller::class,'followers'])->name('followers');
+
 
 });
 Route::middleware(['auth','role:student'])->group(function(){
     Route::post('reserve_espec/{cor}',[Reservationcontroller::class,'reserve_espec'])->name('reserve_espec');
-    Route::get('show_notes',[Evaluationcontroller::class,'show_notes'])->name('show_notes');
+    Route::post('evaluate_T',[Evaluationcontroller::class,'evaluate_T'])->name('evaluate_T');
+    Route::post('follow',[Evaluationcontroller::class,'follow'])->name('follow');
+    Route::post('unfollow',[Evaluationcontroller::class,'unfollow'])->name('unfollow');
 
 });
 
