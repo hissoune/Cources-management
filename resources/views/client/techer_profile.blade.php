@@ -14,7 +14,9 @@
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{ $Teacher->name }}</h5>
               <p class="text-muted mb-2">{{ ($Teacher->description)?$Teacher->description:'no description'  }}</p>
-             
+             @if($Teacher->id !== Auth::id())
+              
+           
               <div class="d-flex justify-content-center mb-2">
                 @if($follow)
                 <form action="{{ route('unfollow') }}" method="post">
@@ -80,6 +82,7 @@
                     </div>
 
               </div>
+              @endif
             </div>
           </div>
           <div class="card mb-4 mb-lg-0">
@@ -173,7 +176,28 @@
                   @endforeach
                 </div>
               </div>
+              
             </div>
+            @auth
+            @role('teacher')
+            <div class="col-md-6 my-3">
+              <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                  <p class="mb-4"><span class="text-primary font-italic me-1">description</span>
+                  </p>
+                  <form action="{{ route('add_description',$Teacher) }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <textarea name="description"  cols="30" rows="5">{{ ($Teacher->description)?$Teacher->description:'add your description' }}</textarea>
+                    <button type="submit" class="btn btn-warning shadow-0">{{ ($Teacher->description)?'update':'add'}}</button>
+
+                  </form>
+                </div>
+              </div>
+              
+            </div>
+            @endrole
+            @endauth
           </div>
         </div>
       </div>

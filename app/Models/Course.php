@@ -18,6 +18,7 @@ class Course extends Model
     'description',
     'image',
     'fillier_id',
+    'accepted',
     'date',
     'price',
     'avalable_seetes',

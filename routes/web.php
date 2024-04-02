@@ -38,6 +38,8 @@ Route::middleware(['auth','role:director'])->group(function(){
     })->name('dasboard');
     Route::get('/show_students',[Admincontroller::class,'show_students'] )->name('show_students');
     Route::get('/show_teachers',[Admincontroller::class,'show_teachers'] )->name('show_teachers');
+    Route::get('/cources_tovalidate',[CourseController::class,'cources_tovalidate'] )->name('cources_tovalidate');
+    Route::get('/Course_accept/{item}',[CourseController::class,'Course_accept'] )->name('Course_accept');
     Route::resource('/fillier',FillierController::class );
     Route::resource('/Classes',ClasseController::class );
     
@@ -49,6 +51,7 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::get('show_reservation',[Reservationcontroller::class,'show_reservation'])->name('show_reservation');
     Route::get('show_studentss',[Reservationcontroller::class,'show_students'])->name('show_studentss');
     Route::put('accept_reservation/{item}',[Reservationcontroller::class,'accept_reservation'])->name('accept_reservation');
+    Route::put('add_description/{Teacher}',[Admincontroller::class,'add_description'])->name('add_description');
     Route::get('evaluate_student/{student}',[Evaluationcontroller::class,'evaluate_student'])->name('evaluate_student');
     Route::put('refiouse_reservation/{item}',[Reservationcontroller::class,'refiouse_reservation'])->name('refiouse_reservation');
     Route::get('show_notes',[Evaluationcontroller::class,'show_notes'])->name('show_notes');
@@ -62,6 +65,10 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::post('follow',[Evaluationcontroller::class,'follow'])->name('follow');
     Route::post('unfollow',[Evaluationcontroller::class,'unfollow'])->name('unfollow');
 
+});
+Route::middleware('auth')->group(function(){
+    Route::get('profile',[Admincontroller::class,'profile'])->name('profile');
+  
 });
 
 

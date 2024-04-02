@@ -3,10 +3,8 @@
         <!-- Logo and Title -->
         <div>
             <a href="#" class="text-2xl font-bold flex items-center text-blue-500">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-8 h-8 text-yellow-600 mr-2">
-                    <path fill-rule="evenodd" d="M5 2h14a2 2 0 012 2v18a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2zm0 2a.5.5 0 00-.5.5v14a.5.5 0 00.5.5h14a.5.5 0 00.5-.5V4a.5.5 0 00-.5-.5H5zm1 2a1 1 0 00-1 1v2a1 1 0 002 0V7h10v2a1 1 0 002 0V7a1 1 0 00-1-1H6z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-yellow-600">Even</span><span class="text-blue-500">TO</span>
+               
+                <span class="text-yellow-600">GRAD</span><span class="text-blue-500">SCHOOL</span>
             </a>
         </div>
         

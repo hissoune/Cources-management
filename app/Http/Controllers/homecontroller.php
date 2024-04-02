@@ -19,7 +19,7 @@ class homecontroller extends Controller
         return view('client.whowear');
     }
     public function courcess(){
-        $Course=Course::all();
+        $Course=Course::where('accepted',true)->get();
         return view('client.courcess',compact('Course'));
     }
     public function teacheres(){

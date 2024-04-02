@@ -27,6 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'description',
         'image',
     ];
 
@@ -96,6 +97,9 @@ public function hasVerifiedEmail(){
          public function followers(){
             return $this->hasMany(Follow::class,'teacher_id');
         }
+        public function reservations(){
+            return $this->hasMany(Reservation::class,'user_id');
+         }
 
         }
 

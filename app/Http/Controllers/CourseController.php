@@ -164,4 +164,14 @@ $Courses = Course::whereHas('user', function($query) {
         return redirect()->route('Courses.index')->with('success','your cours deleted succesfuly');
 
     }
+
+    public function cources_tovalidate(){
+        $Courses=Course::where('accepted',false)->get();
+        return view('director.corces_tovalidate',compact('Courses'));
+
+    }
+    public function Course_accept(Course $item){
+        $item->update(['accepted'=>true]);
+        return back()->with('success','cource accepted succesfuly');
+    }
 }

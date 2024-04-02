@@ -59,7 +59,7 @@
                         </td> 
                     
                     @empty
-                    <td colspan="12"><h1 class="text-center">no students ascks</h1></td> 
+                    <td colspan="12"><h1 class="text-center">no students </h1></td> 
                 </tr>
                     @endforelse
                 </tbody>
