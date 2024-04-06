@@ -170,10 +170,23 @@
                 <div class="card-body">
                   <p class="mb-4"><span class="text-primary font-italic me-1">filliers</span>
                   </p>
-                  @foreach ($Teacher->Coureces as $item)
-                  <p class="mt-4 mb-1 p-3 border" style="font-size: .77rem;">{{ $item->Fillier->name }}</p>
-                  
-                  @endforeach
+                  @php
+    $uniqueFilliers =array();
+
+    foreach ($Teacher->Coureces as $item) {
+        $currentFillierName = optional($item->Fillier)->name;
+        
+        if ($currentFillierName && !in_array($currentFillierName, $uniqueFilliers)) {
+            $uniqueFilliers[] = $currentFillierName;
+        }
+    }  
+@endphp
+@foreach ($uniqueFilliers as $fillierName)
+<p class="mt-4 mb-1 p-3 border" style="font-size: .77rem;">{{ $fillierName }}</p>
+@endforeach
+
+
+              
                 </div>
               </div>
               

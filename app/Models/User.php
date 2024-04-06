@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Role;
+use App\Models\Abonnment_Teacher;
 use App\Models\Follow;
 use App\Mail\VerifyEmail;
 use Illuminate\Http\Request;
@@ -100,7 +101,10 @@ public function hasVerifiedEmail(){
         public function reservations(){
             return $this->hasMany(Reservation::class,'user_id');
          }
-         
+         public function abonnementTeacher()
+         {
+             return $this->hasOne(Abonnment_Teacher::class, 'user_id');
+         }
 
         }
 

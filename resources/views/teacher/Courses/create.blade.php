@@ -91,9 +91,15 @@
         </div>
 
         <div class="mt-6">
+            @if(( $user->abonnementTeacher!== null && $user->abonnementTeacher->number_cources >= $user->Coureces->count())|| $user->Coureces->count()<= 5)
             <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Add Course
             </button>
+            @else
+            <p class="text-center text-red-500 py-2">you got the limit of the cources forthis abonnmenty</p>
+            <a href="{{ route('Abonnments_teacher') }}" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">upgrade abonnment</a>
+            @endif
+           
         </div>
     </form>
 </div>

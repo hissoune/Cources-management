@@ -17,7 +17,7 @@
                     </div>
                    </div>
                    @if($Abonnment->Abonnment_resever($Abonnment->id))
-                    <h4>you have this abonnment</h4>
+                    <h6>you have this abonnment</h6>
                     @else
                     <a href="{{ route('checkout_abonnment',$Abonnment) }}" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> reserve online </a>
 

@@ -15,9 +15,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-       
 
-       
 $Courses = Course::whereHas('user', function($query) {
     $query->where('id', Auth::id());
 })->get();
@@ -31,7 +29,8 @@ $Courses = Course::whereHas('user', function($query) {
     {
         $filliers=Fillier::all();
         $classes=Classe::all();
-        return view('teacher.Courses.create',compact('filliers','classes'));
+        $user=Auth::user();
+        return view('teacher.Courses.create',compact('filliers','classes','user'));
     }
 
     /**
