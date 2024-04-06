@@ -20,7 +20,8 @@ class homecontroller extends Controller
     }
     public function courcess(){
         $Course=Course::where('accepted',true)->get();
-        return view('client.courcess',compact('Course'));
+        $filliers=Fillier::all();
+        return view('client.courcess',compact('Course','filliers'));
     }
     public function teacheres(){
         $Teachers=User::whereHas('roles',function($query){
@@ -53,5 +54,11 @@ class homecontroller extends Controller
     public function search_details(Request $request){
         $cor=Course::find($request->input('cource'));
         return view('client.cource_details',compact('cor'));
+    }
+    public function fillter_fillier(Fillier $item){
+        $Course=Course::where('fillier_id',$item->id)->get();
+        $filliers=Fillier::all();
+        return view('client.courcess',compact('Course','filliers'));
+
     }
 }

@@ -31,6 +31,7 @@ Route::get('teacheres',[homecontroller::class,'teacheres'])->name('teacheres');
 Route::get('filliers',[homecontroller::class,'filliers'])->name('filliers');
 Route::get('search',[homecontroller::class,'search'])->name('search');
 Route::get('teacheres_profile/{Teacher}',[homecontroller::class,'teacheres_profile'])->name('teacheres_profile');
+Route::get('fillter_fillier/{item}',[homecontroller::class,'fillter_fillier'])->name('fillter_fillier');
 
 
 Route::middleware(['auth','role:director'])->group(function(){

@@ -4,8 +4,8 @@
                 <H1 class="text-center text-white"><strong class="text-warning">Filli</strong>ers</H1>
                 <div class="row my-5">
                   @foreach($filliers as $fillier )
-                 <div class="col-sm-6">
-                       <div class="card">
+                 <div class="col-lg-4 col-md-6 col-sm-12 ">
+                       <div class="card mx-auto my-3">
                         <div class="card-body row">
                         <div class="col-sm-6"> 
                          <h5 class="card-title">{{$fillier->name }}</h5>

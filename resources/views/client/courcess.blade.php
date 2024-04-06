@@ -66,15 +66,65 @@
 }
 
         </style>
-<section id="courses" class="lesson">
+<section id="filteredContent" class="lesson">
         
     <div class="container">
         <div style="margin-bottom: 3rem;">
-            <div class="ligne"></div>
-            <div class="header">
-                Choose Your Course
+           <h2 class="text-warning text-center my-4">Cources</h2>
+        </div>
+        <div style="margin-bottom: 3rem; overflow-x: auto;" class="container">
+            <style>
+                /* Custom CSS to adjust spacing between buttons */
+                .btn-container {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 10px; /* Adjust the gap between buttons */
+                    padding: 10px 0; /* Optional: Add padding around the button container */
+                }
+        
+                .btn-container .col {
+                    flex: 0 0 auto;
+                    width: auto;
+                }
+        
+                .btn-container .btn {
+                    width: 100%;
+                }
+            </style>
+        
+            <div class="row flex-nowrap btn-container">
+                <div class="container">
+                    <div class="row flex-nowrap btn-container">
+                        @foreach ($filliers as $item)
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <button class="btn btn-outline-warning btn-rounded" onclick="filterFillier('{{ route('fillter_fillier', $item) }}')">{{ $item->name }}</button>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <script>
+            function filterFillier(route) {
+                const xhr = new XMLHttpRequest();
+                
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            const response = xhr.responseText;
+                            document.body.innerHTML = response;
+                        } else {
+                            console.error('Request failed with status:', xhr.status);
+                        }
+                    }
+                };
+        
+                xhr.open('GET', route);
+                xhr.send();
+            }
+        </script>
+
         <div class="row">
             @foreach($Course as $cor)
             <div class="col-lg-3 col-sm-12 my-4" >
