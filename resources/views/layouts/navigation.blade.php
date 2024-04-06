@@ -83,6 +83,17 @@
               </button>
             </a>
           </li>
+          <li>
+            <a class="" href="{{ route('Abonnments_show') }}">
+              <button class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 text-inherit">
+                      <path fill-rule="evenodd" d="M5 2h14a2 2 0 012 2v18a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2zm0 2a.5.5 0 00-.5.5v14a.5.5 0 00.5.5h14a.5.5 0 00.5-.5V4a.5.5 0 00-.5-.5H5zm1 2a1 1 0 00-1 1v2a1 1 0 002 0V7h10v2a1 1 0 002 0V7a1 1 0 00-1-1H6z" clip-rule="evenodd"></path>
+                  </svg>
+                  
+                <p class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">Abonnments</p>
+              </button>
+            </a>
+          </li>
         @endrole
         @role('teacher')
         <li>

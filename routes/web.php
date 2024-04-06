@@ -7,6 +7,7 @@ use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FillierController;
+use App\Http\Controllers\AbonnmentController;
 use App\Http\Controllers\Evaluationcontroller;
 use App\Http\Controllers\Reservationcontroller;
 
@@ -40,6 +41,12 @@ Route::middleware(['auth','role:director'])->group(function(){
     Route::get('/show_teachers',[Admincontroller::class,'show_teachers'] )->name('show_teachers');
     Route::get('/cources_tovalidate',[CourseController::class,'cources_tovalidate'] )->name('cources_tovalidate');
     Route::get('/Course_accept/{item}',[CourseController::class,'Course_accept'] )->name('Course_accept');
+    Route::get('/Abonnments_show',[AbonnmentController::class,'Abonnments_show'] )->name('Abonnments_show');
+    Route::get('/create_abonment',[AbonnmentController::class,'create_abonment'] )->name('create_abonment');
+    Route::get('/Edit_abonment/{item}',[AbonnmentController::class,'Edit_abonment'] )->name('Edit_abonment');
+    Route::put('/Abonnment_update{item}',[AbonnmentController::class,'Abonnment_update'] )->name('Abonnment_update');
+    Route::delete('/delete_abonnment{item}',[AbonnmentController::class,'delete_abonnment'] )->name('delete_abonnment');
+    Route::post('/Abonnment_store',[AbonnmentController::class,'Abonnment_store'] )->name('Abonnment_store');
     Route::resource('/fillier',FillierController::class );
     Route::resource('/Classes',ClasseController::class );
     
@@ -56,6 +63,10 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::put('refiouse_reservation/{item}',[Reservationcontroller::class,'refiouse_reservation'])->name('refiouse_reservation');
     Route::get('show_notes',[Evaluationcontroller::class,'show_notes'])->name('show_notes');
     Route::get('followers',[Evaluationcontroller::class,'followers'])->name('followers');
+    Route::get('Abonnments_teacher',[AbonnmentController::class,'Abonnments_teacher'])->name('Abonnments_teacher');
+    Route::get('checkout_abonnment/{Abonnment}',[AbonnmentController::class,'checkout_abonnment'])->name('checkout_abonnment');
+    Route::post('session_abonnment/{Abonnment}',[AbonnmentController::class,'session_abonnment'])->name('session_abonnment');
+    Route::get('success_Abonnment/{Abonnment}',[AbonnmentController::class,'success_Abonnment'])->name('success_Abonnment');
 
 
 });
@@ -71,7 +82,9 @@ Route::middleware('auth')->group(function(){
   
 });
 
-
+Route::get('/checkout/{cor}', 'App\Http\Controllers\StripeController@checkout')->name('checkout');
+Route::post('/session/{cor}', 'App\Http\Controllers\StripeController@session')->name('session');
+Route::get('/success/{cor}', 'App\Http\Controllers\StripeController@success')->name('success');
 
 
 require __DIR__.'/auth.php';

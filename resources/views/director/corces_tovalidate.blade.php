@@ -46,7 +46,6 @@
                     </div>
                 </div>
             </div>  --}}
-            <a href="{{ route('Courses.create') }}" class="btn bg-green-500 text-white rounded p-1">Add Cours</a>
             <table class="w-full text-sm shadow border-2 text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 

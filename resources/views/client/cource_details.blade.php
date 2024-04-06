@@ -57,7 +57,7 @@
                         </form>
                     </div>
                     <div class="col-5">
-                         <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> reserve online </a>
+                         <a href="{{ route('checkout',$cor) }}" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> reserve online </a>
                     </div>
                     @endrole 
                         @else

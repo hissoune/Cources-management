@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>your school</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -18,7 +18,7 @@
         <!-- Styles -->
        
     </head>
-    <body class="antialiased">
+    <body class="">
        <div>@include('layouts.nave')</div>
        <main>
         @if (session('success'))
@@ -44,27 +44,15 @@
 
     
     <footer class="text-white text-center text-lg-start " style="background-color: #080d2c;">
-              <!-- Grid container -->
               <div class="container p-4">
-                <!--Grid row-->
                 <div class="row mt-4">
-                  <!--Grid column-->
-                  
-                  <!--Grid column-->
-          
-                  <!--Grid column-->
                   <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-                   
-          
                     <div class="form-outline form-white mb-4">
                     <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 48.8px;"></div><div class="form-notch-trailing"></div></div></div>
-          
                     <ul class="fa-ul" style="margin-left: 1.65em;">
+                     
                       <li class="mb-3">
-                        <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
-                      </li>
-                      <li class="mb-3">
-                        <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+                        <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">khalidhissoune962@gmail.com</span>
                       </li>
                       <li class="mb-3">
                         <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
@@ -116,9 +104,17 @@
           
               <!-- Copyright -->
               <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                <span id="currentYear"></span> Copyright:
+                <a class="text-white" href="https://github.com/hissoune/Cources-management.git">khalid github</a>
               </div>
+              
+              <script>
+                // Get the current year
+                var currentYear = new Date().getFullYear();
+              
+                // Update the content of the element with id="currentYear"
+                document.getElementById('currentYear').textContent = currentYear;
+              </script>
               <!-- Copyright -->
             </footer>
             

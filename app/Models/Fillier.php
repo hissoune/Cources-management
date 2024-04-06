@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Fillier extends Model
 {
@@ -13,4 +14,7 @@ class Fillier extends Model
         'name',
         'description',
     ];
+    public function Coureces(){
+        return $this->hasMany(Course::class,'fillier_id');
+     }
 }
