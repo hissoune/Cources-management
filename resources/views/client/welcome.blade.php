@@ -16,9 +16,7 @@
     </div>
 
     <section class="py-4">
-      <div class="container">
-        
-      </div>
+      <div class="container"></div>
     </section>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

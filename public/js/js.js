@@ -1,5 +1,23 @@
 //navbar ABOUT US
 
+function filterFillier(route) {
+    const xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const response = xhr.responseText;
+                document.body.innerHTML = response;
+            } else {
+                console.error('Request failed with status:', xhr.status);
+            }
+        }
+    };
+
+    xhr.open('GET', route);
+    xhr.send();
+}
+
 var linkClick = document.querySelector('.dropdown');
 var linkToShow = document.querySelector('a.nav-link.dropdown-toggle');
 var linkContentToShow = document.querySelector('ul.dropdown-menu');
@@ -262,5 +280,3 @@ function counter() {
 }
 let countdownS = setInterval(counter, 1000);
 counter();
-
-//lessons

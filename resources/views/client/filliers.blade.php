@@ -18,7 +18,7 @@
                          @endforeach
                         </div>
                        </div>
-                       <a href="#" class="btn btn-warning">Show cources</a>
+                       <a href="{{ route('fillter_fillier', $fillier) }}" class="btn btn-warning">Show cources</a>
 
                       </div>
                     </div>

@@ -62,9 +62,6 @@
                       </li>
                     </ul>
                   </div>
-                  <!--Grid column-->
-          
-                  <!--Grid column-->
                   <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Opening hours</h5>
           
@@ -85,37 +82,28 @@
                       </tbody>
                     </table>
                     <div class="mt-4">
-                        <!-- Facebook -->
                         <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
-                        <!-- Dribbble -->
                         <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
-                        <!-- Twitter -->
                         <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
-                        <!-- Google + -->
                         <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
-                        <!-- Linkedin -->
                       </div>
                   </div>
-                  <!--Grid column-->
                 </div>
-                <!--Grid row-->
               </div>
-              <!-- Grid container -->
           
-              <!-- Copyright -->
               <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 <span id="currentYear"></span> Copyright:
                 <a class="text-white" href="https://github.com/hissoune/Cources-management.git">khalid github</a>
               </div>
               
               <script>
-                // Get the current year
+                
                 var currentYear = new Date().getFullYear();
               
-                // Update the content of the element with id="currentYear"
+                
                 document.getElementById('currentYear').textContent = currentYear;
               </script>
-              <!-- Copyright -->
+            
             </footer>
             
                        

@@ -74,12 +74,11 @@
         </div>
         <div style="margin-bottom: 3rem; overflow-x: auto;" class="container">
             <style>
-                /* Custom CSS to adjust spacing between buttons */
                 .btn-container {
                     display: flex;
                     flex-wrap: nowrap;
-                    gap: 10px; /* Adjust the gap between buttons */
-                    padding: 10px 0; /* Optional: Add padding around the button container */
+                    gap: 10px; 
+                    padding: 10px 0; 
                 }
         
                 .btn-container .col {
@@ -96,34 +95,18 @@
                 <div class="container">
                     <div class="row flex-nowrap btn-container">
                         @foreach ($filliers as $item)
+                        @if ($item->Coureces)
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                             <button class="btn btn-outline-warning btn-rounded" onclick="filterFillier('{{ route('fillter_fillier', $item) }}')">{{ $item->name }}</button>
                         </div>
+                        @endif
+                       
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
         
-        <script>
-            function filterFillier(route) {
-                const xhr = new XMLHttpRequest();
-                
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            const response = xhr.responseText;
-                            document.body.innerHTML = response;
-                        } else {
-                            console.error('Request failed with status:', xhr.status);
-                        }
-                    }
-                };
-        
-                xhr.open('GET', route);
-                xhr.send();
-            }
-        </script>
 
         <div class="row">
             @foreach($Course as $cor)
