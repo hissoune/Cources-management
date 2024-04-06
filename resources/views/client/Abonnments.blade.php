@@ -1,10 +1,10 @@
 <x-home-layout>
     <x-slot name="slot">
-       <div class="container">
-            <H1 class="text-center text-white"><strong class="text-warning">Filli</strong>ers</H1>
-            <div class="row my-5">
+       {{-- <div class="container">
+         
+            <div class="owl-carousel owl-theme">
               @foreach($Abonnments as $Abonnment )
-             <div class="col-sm-6">
+             <div class="item">
                    <div class="card">
                     <div class="card-body row">
                     <div class="col-sm-6"> 
@@ -28,6 +28,57 @@
                 </div>
               @endforeach
             </div>
-         </div>
+         </div> --}}
+
+
+         <!-- Section: Pricing -->
+<section class="mb-5 mb-lg-10">
+
+  <h3 class="fw-bold text-center mb-5 text-warning my-4">Pricing</h3>
+  <div class="row gx-xl-5 container">
+    @foreach($Abonnments as $Abonnment )
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 my-3">
+      <div class="card">
+        <div class="card-header text-center pt-4">
+          <p class="text-uppercase">
+            <strong>{{$Abonnment->type }}</strong>
+          </p>
+
+          <h3 class="mb-4">
+            <strong>$ {{$Abonnment->price}}</strong>
+            <small class="text-muted" style="font-size: 16px">/year</small>
+          </h3>
+          @if($Abonnment->Abonnment_resever($Abonnment->id))
+          <button type="button" class="btn btn-secondary btn-rounded w-100 mb-3"><i class="fas fa-check fw-bold text-success me-3"></i></button>
+          @else
+          <a href="{{ route('checkout_abonnment',$Abonnment) }}" class="btn btn-warning btn-rounded shadow-0 w-100 text-white fw-bold"> <i class="me-1 fa fa-shopping-basket"></i>  Upgrade </a>
+
+         
+          @endif
+        </div>
+        <div class="card-body">
+          <ol class="list-unstyled mb-0">
+            <li class="mb-3">
+              <i class="fas fa-check text-success me-3"></i>
+              updates
+            </li>
+            <li class="mb-3 ">
+              <i class="fas fa-check text-success me-3"></i>Git repository
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check text-success me-3"></i>npm
+              installation
+            </li>
+          </ol>
+
+        </div>
+      </div>
+
+    </div>
+    @endforeach
+  </div>
+
+</section>
+<!-- Section: Pricing -->
     </x-slot>
 </x-home-layout>

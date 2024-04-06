@@ -117,6 +117,11 @@ class AbonnmentController extends Controller
     }
     public function success_Abonnment(Abonnment $Abonnment){
         $user=Auth::user();
+        if($user->abonnementTeacher)
+          {
+            $user->abonnementTeacher->delete();
+          }
+        
         Abonnment_Teacher::create([
              'user_id'=>$user->id,
             'abonnment_id'=>$Abonnment->id,

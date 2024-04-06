@@ -75,9 +75,9 @@
                 Choose Your Course
             </div>
         </div>
-        <div class="owl-carousel owl-theme">
+        <div class="row">
             @foreach($Course as $cor)
-            <div class="item">
+            <div class="col-lg-3 col-sm-12 my-4" >
                 <a href="{{ route('cource_details',$cor) }}" class="course-link">
                     <div class="card">
                         <div class="card-img-top" style="background-image: linear-gradient(rgba(32, 29, 29, 0.5), rgba(22, 16, 16, 0.5)), url('/storage/{{ $cor->image }}');">                            <div class="card-body">
@@ -90,10 +90,10 @@
                                     <p class="card-text">To: {{$cor->end_time}}</p>
                                 </div>
                             </div>
-                            <div class="">
-                                <div class="info-fo">
-                                    <img src="./images/author-01.png" alt="">
-                                    <a href="{{ route('teacheres_profile',['Teacher'=>$cor->user]) }}" class="pay">{{$cor->user->name}} <i class="fas fa-angle-double-right"></i></a>
+                            <div class="card-footer">
+                                <div class="">
+                                    <img src="/storage/{{ $cor->user->image }}" width="40" alt="">
+                                    <a href="{{ route('teacheres_profile',['Teacher'=>$cor->user]) }}" class="pay">{{$cor->user->name}} <i class="fas fa-angle-double-right info"></i></a>
                                 </div>
                             </div>
                         
