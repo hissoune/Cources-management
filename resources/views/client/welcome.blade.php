@@ -19,6 +19,7 @@
       <div class="container"></div>
     </section>
     <script>
+        
         document.addEventListener("DOMContentLoaded", function () {
             var searchResult = document.getElementById('serchResult');
             var searchInput = document.getElementById('searchInput');

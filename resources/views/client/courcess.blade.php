@@ -17,10 +17,10 @@
 
 .card-img-top {
     width: 100%;
-    height: 300px; /* Adjust height as needed */
+    height: 300px; 
     background-size: cover;
     background-position: center;
-    border-radius: 8px 8px 0 0; /* Rounded corners only at the top */
+    border-radius: 8px 8px 0 0; 
 }
 
 .card-body {
@@ -90,7 +90,7 @@
                     width: 100%;
                 }
             </style>
-        
+         
             <div class="row flex-nowrap btn-container">
                 <div class="container">
                     <div class="row flex-nowrap btn-container">

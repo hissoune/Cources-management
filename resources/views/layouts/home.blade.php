@@ -6,13 +6,7 @@
 
         <title>your school</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         
         <!-- Styles -->
@@ -107,9 +101,6 @@
             </footer>
             
                        
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('./js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('./js/js.js') }}"></script>
 
     </body>

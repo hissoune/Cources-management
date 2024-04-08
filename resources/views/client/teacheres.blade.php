@@ -2,29 +2,23 @@
     <x-slot name="slot">
 
      
-        <section class="vh-100" style="background-color: #060f30;">
+        <section class="" style="background-color: #060f30;">
          
-            <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="container py-5 ">
+              <div class="row ">
                 @foreach($Teachers as $Teacher)
-                    
-               
-                <div class="col col-md-9 col-lg-7 col-xl-5 ">
-                  <div class="card " style="border-radius: 50px; background-color: #93e2bb; ">
+                  <div class="card teachers col-lg-4 " >
+                    <div class="img_cont w-100"><img src="/storage/{{ $Teacher->image }}"
+                      alt="teacher image" class=""></div>
                     <div class="card-body  text-black">
-                     
-                      <div class="d-flex  align-items-center ">
-                        <div class="flex flex-column align-items-start  info-fo">
-                          <img src="storage/Courses/NoiX7kxGKkUNvhfHfRlP0QA7Kh0deS5pPFZOVtBc.png"
-                            alt="Generic placeholder image" class=" rounded-circle border border-dark border-3"
-                            width="90">
-                                    
-                        </div>
-                        
-                        <div class="flex-grow-1 ms-3 ">
-                          <div class="d-flex flex-row align-items-center mb-2">
+                      
+                          
+                          <div class="  mb-2">
+                            <p class="">{{ $Teacher->name }}</p>
+                            <hr>
                             <p class="mb-0 me-2">{{ $Teacher->email }}</p>
-                            
+                            <hr>
+                            <p class="my-4">{{ $Teacher->Coureces->count() }} Cources</p>
                           </div>
                           <div class="d-flex ">
                             <div class="mx-3">
@@ -37,15 +31,13 @@
                               data-mdb-ripple-color="dark">See profile</button>
                               </form>
                             </div>
-                          </div>
-                          <div class="d-flex "><p class="my-4">{{ $Teacher->Coureces->count() }} Cources</p></div>
+                        
                         </div>
                       </div>
                      
                       
                     </div>
-                  </div>
-                </div>
+                  
                 @endforeach
               </div>
             </div>

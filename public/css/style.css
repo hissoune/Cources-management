@@ -35,10 +35,46 @@ ul li {
 
 /********************header*****************************/
 
-header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+
+
+button {
+    padding: 10px 20px; /* Add padding to button */
+    font-size: 16px; /* Set font size for button text */
+    border: none; /* Remove button border */
+    background-color: #f8b400; /* Set button background color */
+    color: #fff; /* Set button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+header button:hover {
+    background-color: #e69a00; /* Change button background color on hover */
+}
+
+
+
+/* Custom styles for the navbar */
+#navbar-scroll-boo {
+    background-color: rgba(255,200,150,1,5); /* Set navbar background color */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff; 
+    font-size: 16px; 
+}
+
+
+
+.logo {
+    color: #f8b400; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-decoration: none;
 }
 
 
@@ -54,10 +90,7 @@ nav {
     opacity: .95;
 }
 
-.navbar-position {
-    display: flex;
-    justify-content: center;
-}
+
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
@@ -66,35 +99,35 @@ nav {
 }
 
 .logo {
-    font-size: 2.3em;
-    font-weight: 900;
+    font-size: 2em;
+    font-weight: 800;
 }
 
 .logo span {
     color: #f5a425;
 }
 
-.list-style {
-    margin-left: 1rem;
-    border: transparent 3px solid;
-    color: #fff;
-}
 
-.list-style a:hover {
-    color: #f5a425;
-}
+
 
 
 /*color nav**/
 
-a#navbarDropdownMenuLink,
-a#navbarDropdownMenuLink:hover,
-a.nav-link:hover {
-    color: #fff !important;
+
+
+.navbare {
+    transition: all 10s ease;
+    display:flex;
+   justify-content:around;
+
+}
+.nav-link:hover ,.nav-link:hover svg {
+    transform: scale(1.2); 
 }
 
-.navbar-nav {
-    transition: all 10s ease;
+
+.nav-link,.nav-link svg {
+    transition: transform 0.3s ease;
 }
 
 .dropdown-style {
@@ -157,35 +190,20 @@ a.nav-link:hover {
 }
 
 
-/****vidéo****/
 
-header video {
-    position: absolute;
-    overflow: hidden;
-    /* top: 0;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0; */
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    transform: translateX(-50%) translateY(-50%);
+video {
+    background-color: rgba(250, 250, 250, 0.1); 
+    border: 2px solid #f8b400;
+    box-shadow: 10px 10px 10px rgba(200, 200, 100, 0.5); 
+    display: block;
+    margin: 0 auto; 
+    max-width: 100%; 
+    outline: none;
 }
 
-header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #121b2f;
-    opacity: .8;
-    z-index: 1;
+
+video:hover {
+    border-color: #ff7f50; 
 }
 
 
@@ -284,13 +302,7 @@ header .overlay {
     margin-bottom: 3rem;
 }
 
-.categorie ul li {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-weight: bold;
-}
+
 
 .list-category {
     cursor: pointer;
@@ -328,15 +340,6 @@ a.link {
     text-transform: initial;
 }
 
-a.link:hover {
-    color: #FC3;
-}
-
-.active {
-    color: #f5a425;
-}
-
-
 /******timer*********/
 
 .timer {
@@ -367,6 +370,12 @@ a.link:hover {
     text-align: center;
     justify-content: center;
 }
+h1{
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 900;
+}
 
 .number {
     color: #fff;
@@ -379,47 +388,62 @@ a.link:hover {
     font-weight: 500;
     font-size: 0.9em;
 }
-
+/*********register and login forms**********/
 .register-text {
-    background-color: rgba(250, 250, 250, 0.2);
+  
     color: #fff;
     margin: 0;
     padding: 10px;
     text-align: center;
+    
 }
 
 .register-form {
-    background-color: rgba(250, 250, 250, 0.1);
-    display: flex;
-    flex-direction: column;
-    padding: 3.5rem 0;
+    background-color: rgba(200, 200, 100, 0.1);
+     width:50%;
+     border-radius:5%;
+     border-color:#fff;
+     border:solid;
+     padding: 3rem 0;
 }
-
-.register-form input {
+.form-container{
+    display:flex;
+    justify-content:center;
+    margin:5%
+}
+.register-form input,select {
     background: rgba(250, 250, 250, 0.1);
     border: none;
     color: #fff;
     margin: 1rem auto;
     padding: 10px;
-    width: 80%;
+    width: 50%;
+}
+.register-form select option {
+    background: rgba(250, 250, 250, 0.1);
+    border: none;
+    color: #fff;
+    margin: 1rem auto;
+    padding: 10px;
+    width: 50%;
+}
+
+.form-div{
+    display:flex;
+    flex-direction:column;
 }
 
 ::-webkit-input-placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff !important;
     opacity: 1;
-    /* Firefox */
 }
 
 ::-moz-placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff !important;
     opacity: 1;
-    /* Firefox */
 }
 
 :-ms-input-placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff !important;
     opacity: 1;
     /* Firefox */
@@ -454,8 +478,31 @@ a.link:hover {
     flex-direction: column;
     margin: auto;
     height: auto;
-    margin-top: 40px;
+    margin-top: 7%;
 }
+.register-form .btn {
+    background-color: #f5a425;
+    color: #fff;
+    
+    font-weight: 600;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 20px auto;
+    border-radius: 1;
+    padding: 10px 15px;
+}
+
+.register-form .btn:hover {
+    border: none;
+    box-shadow: none;
+}
+.register-form  p{
+    color:#fff;
+    text-align:center;
+}
+
+/*********end register and login forms**********/
 
 .timer .content {
     display: flex;
@@ -464,23 +511,6 @@ a.link:hover {
     height: 100%;
     align-content: center;
     justify-content: center;
-}
-
-.register-form .btn {
-    background-color: #f5a425;
-    color: #fff;
-    font-weight: 600;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 20px auto;
-    border-radius: 0;
-    padding: 10px 15px;
-}
-
-.register-form .btn:hover {
-    border: none;
-    box-shadow: none;
 }
 
 
@@ -595,14 +625,7 @@ a.link:hover {
     color: white;
 }
 
-.video-des {
-    height: 35rem;
-    width: auto;
-    background: url("../images/main-thumb.png") center center / cover;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
+
 
 .bgr {
     width: 100%;
@@ -708,6 +731,40 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+.teachers img {
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto;
+    border: 2px solid #fff; 
+}
+.img_cont{
+    background: url("../images/courses-bg.jpg") center center / cover;
+    padding-top: 20px;
+}
+
+/* .teachers{
+    background-color:#fff;
+    margin: 1%;
+} */
+
+.teachers p{
+    color: black;
+    font-weight: 700;
+}
+.teachers {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease; 
+    margin: 1%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.teachers:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4); 
+}
 
 
 /************large devices only ********/
@@ -718,12 +775,8 @@ footer p {
     .navbar-position {
         justify-content: end;
     }
-    .list-style:hover {
-        border: #f5a425 3px solid;
-    }
-    .list-style a:hover {
-        color: #fff;
-    }
+    
+   
     .dropdown-menu a:hover {
         color: #f5a425;
     }
@@ -750,12 +803,7 @@ footer p {
 /********** Medium devices only *********/
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .list-style:hover {
-        border: #f5a425 3px solid;
-    }
-    .list-style a:hover {
-        color: #fff !important;
-    }
+    
     /***presentation****/
     .pre-content {
         height: 100vh;
@@ -777,6 +825,13 @@ footer p {
 /********Small divices only *************/
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+    .navbare {
+        transition: all 10s ease;
+        display:none;
+       
+    
+    }
     /******why choose us*********/
     .categorie ul li {
         font-size: 15px;
@@ -840,6 +895,16 @@ footer p {
         font-size: 15px;
         font-weight: 600;
         justify-content: space-between;
+    }
+    .navbare {
+        transition: all 10s ease;
+        width:100%;
+        margin-left:40%;
+        display:none;
+    }
+
+    .show {
+        display:block;
     }
     .whyUs .why {
         text-align: center;
