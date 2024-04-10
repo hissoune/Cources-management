@@ -6,7 +6,7 @@
                     </h1>
                 <div class="form-container">
                   
-                    <form class="register-form" action="{{ route('logedin') }}">
+                    {{-- <form class="register-form" action="{{ route('logedin') }}">
                         <div class="form-div">
                             <label for="email" class="register-text">Your email</label>
                             <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -24,6 +24,26 @@
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                         don't have an account? <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Register now</a>
                         </p>
+                    </form> --}}
+                    <form action="{{ route('logedin') }}" method="POST" class="form-group fome_style">
+                        @csrf
+                    
+                        <div class="row mb-3">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label for="email" class="register-text">Your email</label>
+                                <input type="email" class="form-control border register-text"  placeholder="Email@gmail.com" name="email">
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <label for="password" class="register-text">Password</label>
+                                <input type="password" class="form-control border"  placeholder="••••••••" name="password">
+                            </div>
+                        </div>
+                      
+                           
+                        <div class="form-div">
+                            <button type="submit" >LOG IN</button>
+
+                        </div>
                     </form>
                 </div>
         

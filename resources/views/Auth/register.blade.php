@@ -1,11 +1,11 @@
 <x-home-layout>
     <x-slot name="slot">
         <section class="register">    
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 class="">
                 Create account
             </h1>            
                     <div class="form-container">
-                        
+{{--                         
                         <form class="register-form" action="{{ route('registred') }}" method="POST" enctype="multipart/form-data">
                            @csrf
                             <div class="form-div">
@@ -43,6 +43,46 @@
                                 </div>                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Already have an account? <a href="{{ route('login') }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                             </p>
+                        </form> --}}
+
+                        <form action="{{ route('registred') }}" method="POST" class="form-group fome_style" enctype="multipart/form-data">
+                            @csrf
+                        
+                            <div class="row mb-3">
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="name" class="register-text">your name</label>
+                                    <input type="text" class="form-control border register-text"  placeholder="name" name="name">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="email" class="register-text">Your email</label>
+                                    <input type="email" class="form-control border register-text"  placeholder="Email@gmail.com" name="email">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="password" class="register-text">Password</label>
+                                    <input type="password" class="form-control border"  placeholder="••••••••" name="password">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="password_confirmation" class="register-text">password confirmation</label>
+                                    <input type="password" class="form-control border"  placeholder="••••••••" name="password_confirmation">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="image" class="register-text">image</label>
+                                    <input type="file" class="form-control border"  placeholder="••••••••" name="image">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="role" class="register-text">student/teacher</label>
+                                <select name="role" class="form-control border" id="role">
+                                    <option  value="student">student</option> 
+                                <option value="teacher">teacher</option>
+                                </select>
+                                </div>
+                            </div>
+                          
+                               
+                            <div class="form-div">
+                                <button type="submit" >Register</button>
+    
+                            </div>
                         </form>
                     </div>
                

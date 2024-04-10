@@ -1,13 +1,13 @@
 <x-home-layout>
     <x-slot name="slot">
-        <style>
+        {{-- <style>
             .card {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(199, 194, 194, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -65,7 +65,7 @@
     text-decoration: underline;
 }
 
-        </style>
+        </style> --}}
 <section id="filteredContent" class="lesson">
         
     <div class="container">
@@ -106,35 +106,30 @@
                 </div>
             </div>
         </div>
-        
 
-        <div class="row">
+        <div class="teachers-grid">
             @foreach($Course as $cor)
-            <div class="col-lg-3 col-sm-12 my-4" >
-                <a href="{{ route('cource_details',$cor) }}" class="course-link">
-                    <div class="card">
-                        <div class="card-img-top" style="background-image: linear-gradient(rgba(32, 29, 29, 0.5), rgba(22, 16, 16, 0.5)), url('/storage/{{ $cor->image }}');">                            <div class="card-body">
-                               <div class="card-head my-4">
-                                <h4 class="card-title ">{{$cor->name}}</h4>
-                               </div>
-                                <p class="card-text">Date: {{$cor->date}}</p>
-                                <div class="d-flex justify-content-between">
-                                    <p class="card-text">From: {{$cor->start_time}}</p>
-                                    <p class="card-text">To: {{$cor->end_time}}</p>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="">
-                                    <img src="/storage/{{ $cor->user->image }}" width="40" alt="">
-                                    <a href="{{ route('teacheres_profile',['Teacher'=>$cor->user]) }}" class="pay">{{$cor->user->name}} <i class="fas fa-angle-double-right info"></i></a>
-                                </div>
-                            </div>
-                        
+                <div class="teacher-card">
+                    <div class="img-container">
+                        <img src="/storage/{{ $cor->image }}" alt="teacher image">
+                    </div>
+                    <div class="card-body">
+                        <p>{{ $cor->name }}</p>
+                        <hr>
+                        <p>{{ $cor->date }}</p>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p><strong>S </strong>{{ $cor->start_time}}</p>
+                            <p><strong>E </strong>{{ $cor->end_time}}</p>
                         </div>
                        
+                        <div class="button-group">
+                            <form action="{{ route('cource_details',$cor) }}" method="get">
+                                <button type="submit" class="btn btn-see-profile">See details</button>
+                            </form>
+                        </div>
                     </div>
-                </a>
-            </div>
+                </div>
             @endforeach
         </div>
         
