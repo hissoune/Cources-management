@@ -14,15 +14,24 @@
     </head>
     <body class="">
        <div>@include('layouts.nave')</div>
-       <main>
+       <main><!-- Popup Modal -->
+        <div id="popupModal" class="popup-modal">
+          <div class="popup-content">
+            <span id="popupClose" class="popup-close">&times;</span>
+            <p id="popupMessage" class="popup-message"></p>
+          </div>
+        </div>
+        
+        <!-- Your View Content -->
         @if (session('success'))
-          <div class="alert alert-success w-50 alert-dismissible fade show" role="alert">
-              {{ session('success') }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
+          <div id="successAlert" class="alert alert-success w-50 alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
         @endif
+        
         @if (session('error'))
         <div class="alert alert-danger d-flex justify-content-center align-items-center w-50 mx-auto alert-dismissible fade show" role="alert">
             {{ session('error') }}

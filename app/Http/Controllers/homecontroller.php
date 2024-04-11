@@ -12,7 +12,19 @@ use Illuminate\Support\Facades\Auth;
 class homecontroller extends Controller
 {
     public function index(){
-        return view('client.welcome');
+        $cources=Course::where('date','>',now())->orderBy('created_at','desc')->limit(4)->get();
+        $filliers = Fillier::withCount('Coureces')
+        ->having('coureces_count', '>', 0) 
+        ->orderByDesc('coureces_count')
+        ->limit(4)
+        ->get();
+        $Teachers=User::whereHas('roles',function($query){
+            $query->where('name','teacher') ;
+        })->withCount('followers')
+        ->having('followers_count', '>', 0) 
+        ->orderByDesc('followers_count')->get();
+        
+        return view('client.welcome',compact('cources','filliers','Teachers'));
     }
 
     public function about(){
@@ -20,7 +32,11 @@ class homecontroller extends Controller
     }
     public function courcess(){
         $Course=Course::where('accepted',true)->get();
-        $filliers=Fillier::all();
+        $filliers = Fillier::withCount('Coureces')
+        ->having('coureces_count', '>', 0) 
+        ->orderByDesc('coureces_count')
+        
+        ->get();
         return view('client.courcess',compact('Course','filliers'));
     }
     public function teacheres(){
@@ -57,7 +73,10 @@ class homecontroller extends Controller
     }
     public function fillter_fillier(Fillier $item){
         $Course=Course::where('fillier_id',$item->id)->get();
-        $filliers=Fillier::all();
+        $filliers = Fillier::withCount('Coureces')
+        ->having('coureces_count', '>', 0) 
+        ->orderByDesc('coureces_count')
+        ->get();
         return view('client.courcess',compact('Course','filliers'));
 
     }

@@ -20,6 +20,41 @@ body {
     background-color: var(--background-blue);
 }
 
+//sessions popup//
+/* Popup Modal Styles */
+.popup-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .popup-content {
+    position: relative;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .popup-message {
+    color: #fff;
+    font-size: 16px;
+  }
+  
 .hide {
     display: none;
 }
@@ -116,9 +151,22 @@ buutton:hover{
     }
 }
 
+/* latest cources */
 
+
+.latest_cources {
+    padding: 1rem 1rem;  
+    margin-bottom:4%;   
+   border-top:solid 1px #fff;
+
+}
+
+
+/* latest cources */
 
 /* Custom styles for the navbar */
+
+
 #navbar-scroll-boo {
     background-color: rgba(255,200,150,1,5); /* Set navbar background color */
 }
@@ -775,6 +823,28 @@ footer p {
     margin-bottom: 0;
 }
 
+
+.famus_teachers img{
+    border-radius: 50%; 
+    width: 100%; 
+    height: 80%; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto;
+    border: 2px solid #fff; 
+}
+.famus_teachers h4 {
+    margin-top:3%;
+    color: #fff;
+    text-align:center;
+    font-weight: 700;
+}
+.famus_teachers h6 {
+    margin-top:3%;
+    color: #fff;
+    text-align:center;
+    font-weight: 400;
+}
 /* Global styles */
 
 .container {
@@ -792,9 +862,31 @@ footer p {
 /* Teachers Grid */
 .teachers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding:3%;
 }
+
+/* Large screens (>= 992px) */
+@media (min-width: 992px) {
+    .teachers-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+}
+
+/* Medium screens (>= 768px and < 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .teachers-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+/* Small screens (< 768px) */
+@media (max-width: 767px) {
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
 
 /* Teacher Card */
 .teacher-card {
