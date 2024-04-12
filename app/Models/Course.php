@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Classe;
 use App\Models\Fillier;
+use App\Models\summary;
 use App\Models\Reservation;
 use App\Models\classes_courses;
 use Illuminate\Database\Eloquent\Model;
@@ -41,6 +42,9 @@ class Course extends Model
     public function Reservations(){
       return $this->hasMany(Reservation::class,'cource_id');
    }
+   public function Resume(){
+    return $this->hasOne(summary::class,'cource_id');
+ }
 //     public function classe()
 // {
 //     return $this->belongsToMany(Classe::class, 'classes_courses', 'courses_id', 'classes_id')->using(classes_courses::class);

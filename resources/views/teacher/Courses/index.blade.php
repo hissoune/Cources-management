@@ -115,8 +115,14 @@
 
 
                         <td class="px-6 py-4 flex justify-around">
-
-                            <form action="{{ route('Courses.edit',$item) }}"  >
+                             @if($item->date < now() && $item->Reservations->count() > 0)
+                             <form action="{{ route('Resume_teacher',$item) }}">
+                                @csrf
+                                 <button class="btn bg-green-500 text-white rounded p-1">Resume</button>
+                             </form>
+                             @endif
+                            
+                             <form action="{{ route('Courses.edit',$item) }}"  >
                                 @csrf
                         
                                  <button class="btn bg-green-500 text-white rounded p-1">Edit</button>
@@ -126,7 +132,6 @@
                                 @method('put')
                                 <button class="btn bg-red-500 text-white rounded p-1">delete</button>
                             </form>
-                            
                         </td>
 
                     @empty

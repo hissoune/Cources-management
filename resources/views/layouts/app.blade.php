@@ -8,20 +8,33 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="{{ asset('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css') }}" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
 </head>
 <body>
-    <div class="min-h-screen bg-gray-50/50">
-    @include('layouts.navigation')
+    <div class="min-h-screen bg-gray-50/50 grid grid-cols-4">
+
+      <div class=" xl:col-span-1 col-span-4  ">
+        <div class=" min_nave bg-gradient-to-br from-gray-800 to-gray-900">
+        <div class="">
+          
+      </div>
+      <div id="mobile-menu-toggle">
+        <button  class="text-white focus:outline-none">
+            <svg class=" w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+  </div>
+        @include('layouts.navigation')
+
+      </div>
   
-    <div class="p-4 xl:ml-80">
-       
-    @include('layouts.navemen')
-      <div class="mt-12">
-     
-        
-        <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
+    <div class="xl:col-span-3 col-span-4 md:mx-0 mx-3 ">
+    <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
           <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
             <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
               <div>
@@ -35,13 +48,7 @@
                 </p>
                 @endif
               </div>
-              <button aria-expanded="false" aria-haspopup="menu" id=":r5:" class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
-                <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currenColor" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"></path>
-                  </svg>
-                </span>
-              </button>
+              
             </div>
             <div class="w-full p-6 overflow-x-scroll px-0 pt-0 pb-2">
               @if (session('success'))
@@ -65,8 +72,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="text-blue-gray-600">
+      
+      <div class="text-blue-gray-600 ">
         <footer class="py-2">
           <div class="flex w-full flex-wrap items-center justify-center gap-6 px-2 md:justify-between">
             <p class="block antialiased font-sans text-sm leading-normal font-normal text-inherit">© 2024, made with <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="-mt-0.5 inline-block h-3.5 w-3.5">
@@ -81,14 +88,10 @@
         </footer>
       </div>
     </div>
-  </div>
 
-  <script>
-  
-    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
-        var mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden', !mobileMenu.classList.contains('hidden'));
-    });
-</script>
+    </div>
+  <script src="{{ asset('./js/dash.js') }}"></script>
+
+ 
 </body>
 </html>

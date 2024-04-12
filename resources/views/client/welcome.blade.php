@@ -168,4 +168,3 @@
                               
     </x-slot>
 </x-home-layout>
-

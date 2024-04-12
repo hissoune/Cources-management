@@ -7,6 +7,7 @@ use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FillierController;
+use App\Http\Controllers\SummaryController;
 use App\Http\Controllers\AbonnmentController;
 use App\Http\Controllers\Evaluationcontroller;
 use App\Http\Controllers\Reservationcontroller;
@@ -68,6 +69,7 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::get('checkout_abonnment/{Abonnment}',[AbonnmentController::class,'checkout_abonnment'])->name('checkout_abonnment');
     Route::post('session_abonnment/{Abonnment}',[AbonnmentController::class,'session_abonnment'])->name('session_abonnment');
     Route::get('success_Abonnment/{Abonnment}',[AbonnmentController::class,'success_Abonnment'])->name('success_Abonnment');
+    Route::get('Resume_teacher/{item}',[SummaryController::class,'Resume_teacher'])->name('Resume_teacher');
 
 
 });

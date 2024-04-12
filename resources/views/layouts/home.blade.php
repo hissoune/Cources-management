@@ -9,20 +9,17 @@
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         
-        <!-- Styles -->
        
     </head>
     <body class="">
        <div>@include('layouts.nave')</div>
-       <main><!-- Popup Modal -->
+       <main>
         <div id="popupModal" class="popup-modal">
           <div class="popup-content">
             <span id="popupClose" class="popup-close">&times;</span>
             <p id="popupMessage" class="popup-message"></p>
           </div>
         </div>
-        
-        <!-- Your View Content -->
         @if (session('success'))
           <div id="successAlert" class="alert alert-success w-50 alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -111,6 +108,7 @@
             
                        
     <script src="{{ asset('./js/js.js') }}"></script>
+    
 
     </body>
 </html> 
