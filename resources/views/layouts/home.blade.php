@@ -108,6 +108,7 @@
             
                        
     <script src="{{ asset('./js/js.js') }}"></script>
+    <script src="{{ asset('./js/pdf.js') }}"></script>
     
 
     </body>

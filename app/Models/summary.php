@@ -21,7 +21,7 @@ class summary extends Model
         
     ];
 
-    public function Cource(){
+    public function Course(){
         return $this->belongsTo(Course::class,'cource_id');
     }
 }

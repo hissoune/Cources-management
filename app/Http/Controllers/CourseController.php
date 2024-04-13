@@ -26,7 +26,7 @@ public function cources_for_student(){
         $query->whereHas('user',function($secquery){
             $secquery->where('id',Auth::id());
         });
-    })->get();
+    })->where('date','<',now())->get();
    return view('client.Couces_done',compact('Course'));
 }
     /**
