@@ -14,7 +14,11 @@ body {
     display:none;
   }
   
- 
+  .sidebar {
+    display:block;
+    display: flex;
+    flex-direction:column;
+  }
   
  
   
@@ -36,18 +40,88 @@ body {
     font-size: 1rem;
   }
   
+/* Popup container */
 
-  
+/* CSS for AddResume form */
+.AddResume {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none; 
+    transition: border-color 0.3s ease;
+}
+input:focus,
+textarea:focus {
+    border-color: #f8b400; /* Border color on focus */
+    box-shadow: 0 4px 8px rgba(248, 180, 0, 0.4); /* Updated box-shadow on focus */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+/* Style submit button */
+input {
+    color: black;
+    padding: 12px 20px;
+    border-radius: 4px;
+   
+    font-size: 14px;
+}
+.AddResume button{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border: none; 
+    border-radius:5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #f8b400; 
+    color: #fff;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Hover effect for buttons */
+.AddResume button:hover {
+    transform: scale(1.05); /* Scale the button by 5% on hover */
+}
+
+/* Additional styling for form labels */
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
   /* Media query for mobile menu toggle */
   
   @media (max-width: 768px) {
     .sidebar {
-      display: none;
-      display: flex;
-      flex-direction:column;
+      display:none;
+      flex-direction: column;
+      
     }
     .show{
-        display: block;
+        
+    display: block;
     }
     .min_nave{
         display:block;

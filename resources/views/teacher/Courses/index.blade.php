@@ -114,11 +114,11 @@
                          </th>
 
 
-                        <td class="px-6 py-4 flex justify-around">
+                        <td class="px-3 py-4 flex grid grid-cols-3">
                              @if($item->date < now() && $item->Reservations->count() > 0)
-                             <form action="{{ route('Resume_teacher',$item) }}">
+                             <form action="{{ route('Resume_teacher',$item) }}" class="col-span-3">
                                 @csrf
-                                 <button class="btn bg-green-500 text-white rounded p-1">Resume</button>
+                                 <button class="btn bg-green-500 text-white rounded  ">{{ ($item->Resume)?'update':'Add' }} Resume</button>
                              </form>
                              @endif
                             

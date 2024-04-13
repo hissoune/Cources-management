@@ -70,6 +70,8 @@ Route::middleware(['auth','role:teacher'])->group(function(){
     Route::post('session_abonnment/{Abonnment}',[AbonnmentController::class,'session_abonnment'])->name('session_abonnment');
     Route::get('success_Abonnment/{Abonnment}',[AbonnmentController::class,'success_Abonnment'])->name('success_Abonnment');
     Route::get('Resume_teacher/{item}',[SummaryController::class,'Resume_teacher'])->name('Resume_teacher');
+    Route::post('Add_resume',[SummaryController::class,'Add_resume'])->name('Add_resume');
+    Route::put('update_resume/{resume}',[SummaryController::class,'update_resume'])->name('update_resume');
 
 
 });
@@ -78,6 +80,8 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::post('evaluate_T',[Evaluationcontroller::class,'evaluate_T'])->name('evaluate_T');
     Route::post('follow',[Evaluationcontroller::class,'follow'])->name('follow');
     Route::post('unfollow',[Evaluationcontroller::class,'unfollow'])->name('unfollow');
+    Route::get('cources_for_student',[CourseController::class,'cources_for_student'])->name('cources_for_student');
+    Route::get('Resume/{cor}',[SummaryController::class,'Resume'])->name('Resume');
 
 });
 Route::middleware('auth')->group(function(){

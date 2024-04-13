@@ -21,7 +21,14 @@ $Courses = Course::whereHas('user', function($query) {
 })->get();
         return view('teacher.Courses.index',compact('Courses'));
     }
-
+public function cources_for_student(){
+    $Course=Course::whereHas('Reservations',function($query){
+        $query->whereHas('user',function($secquery){
+            $secquery->where('id',Auth::id());
+        });
+    })->get();
+   return view('client.Couces_done',compact('Course'));
+}
     /**
      * Show the form for creating a new resource.
      */

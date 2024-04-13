@@ -50,6 +50,9 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('profile') }}">profile</a>
                                 </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ route('cources_for_student') }}">Your Cources</a>
+                                </li>
                                 @endrole
                                 <a class="dropdown-item dropdown-style" href="{{ route('logout') }}">logout</a>
                             </div>
