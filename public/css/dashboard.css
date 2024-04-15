@@ -27,7 +27,7 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    color: #3b82f6; /* Blue color */
+    color: #3b82f6;
   }
   
   .nav-links {
@@ -36,13 +36,11 @@ body {
   }
   
   .nav-links a {
-    color: #ffffff; /* White color */
+    color: #ffffff;
     font-size: 1rem;
   }
   
-/* Popup container */
 
-/* CSS for AddResume form */
 .AddResume {
     max-width: 600px;
     margin: 0 auto;
@@ -71,15 +69,14 @@ textarea {
 }
 input:focus,
 textarea:focus {
-    border-color: #f8b400; /* Border color on focus */
-    box-shadow: 0 4px 8px rgba(248, 180, 0, 0.4); /* Updated box-shadow on focus */
+    border-color: #f8b400; 
+    box-shadow: 0 4px 8px rgba(248, 180, 0, 0.4); 
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing of textarea */
+    resize: vertical;
 }
 
-/* Style submit button */
 input {
     color: black;
     padding: 12px 20px;
@@ -100,18 +97,14 @@ input {
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-/* Hover effect for buttons */
 .AddResume button:hover {
-    transform: scale(1.05); /* Scale the button by 5% on hover */
+    transform: scale(1.05); 
 }
 
-/* Additional styling for form labels */
 .label {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-  /* Media query for mobile menu toggle */
   
   @media (max-width: 768px) {
     .sidebar {

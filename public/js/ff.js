@@ -1,11 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
+
     var searchResult = document.getElementById('serchResult');
     var searchInput = document.getElementById('searchInput');
+    
     searchResult.style.display='none';
     searchInput.addEventListener('input', function () {
         var searchTerm = this.value;
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '{{ route("search") }}?searchInput=' + searchTerm, true);
+        xhr.open('GET', searchRoute+'?searchInput=' + searchTerm, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText);
@@ -24,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     data.forEach(function (Cource) {
                         let cor =Cource;
                         var cardHtml = `
-                        <div class="result_item">
-                            <form action="{{ route('search_details') }}" method="GET" >
+                        <div class="result_item" >
+                            <form action="${courcedetail}" method="GET" >
                         
                                     <input  name="cource" hidden value="${Cource.id}">
                                     <div class="d-flex">
@@ -50,4 +51,3 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         xhr.send();
     });
-});

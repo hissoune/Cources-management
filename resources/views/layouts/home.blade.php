@@ -43,7 +43,7 @@
        </main>
 
     
-    <footer class="text-white text-center text-lg-start " style="background-color: #080d2c;">
+    <footer>
               <div class="container p-4">
                 <div class="row mt-4">
                   <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
@@ -105,8 +105,7 @@
               </script>
             
             </footer>
-            
-                       
+    <script src="{{ asset('./js/ff.js') }}"></script>          
     <script src="{{ asset('./js/js.js') }}"></script>
     <script src="{{ asset('./js/pdf.js') }}"></script>
     

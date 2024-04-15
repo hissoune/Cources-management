@@ -7,7 +7,16 @@
             <button class="navbar-toggler " id="burger-menu" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+                <form class="searsh" action="{{ route('search') }}" method="GET" id="searchForm" onsubmit="return false;">
+                    
+                    <input class="" name="searchInput" id="searchInput" placeholder="Type to search...">
+              
+                </form>
+               
+           
             <div class=" navbare" id="navbarNavDropdown">
+                
                 <ul class="navbar-nav">
                     <li class="nav-item list-style">
                         <a class="nav-link active" aria-current="page" href="{{ route('/') }}">Home</a>
@@ -15,7 +24,7 @@
                     <li class="nav-item dropdown list-style">
                         <a class="nav-link " href="{{ route('about') }}" 
                             >
-                            about us
+                            about
                         </a>
                        
                     </li>
@@ -88,12 +97,19 @@
             </div>
         </div>
     </nav>
+    <div class="result" id="serchResult">
+                  
+    </div>
     @if(request()->is('/'))
-    <div id="home" class="overlay"></div>
-    
+
+    <div class="vidfixed">
+    <div class="video-container">
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
         <source src="./images/course-video.mp4" type="video/mp4">
     </video>
+</div>
+<div id="home" class="overlay"></div>
+</div>
     <!-- Endvidéo -->
 
     <div class="container description text-uppercase">
@@ -107,6 +123,10 @@
 @endif
     
 </div>
+<script>
+    const searchRoute = "{{ route('search') }}";
+    const courcedetail = "{{ route('search_details') }}";
+</script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

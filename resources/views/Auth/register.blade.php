@@ -48,35 +48,35 @@
                         <form action="{{ route('registred') }}" method="POST" class="form-group fome_style" enctype="multipart/form-data">
                             @csrf
                         
-                            <div class="row mb-3">
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                         
+                                <div class="form-div">
                                     <label for="name" class="register-text">your name</label>
-                                    <input type="text" class="form-control border register-text"  placeholder="name" name="name">
+                                    <input type="text" class="form-control border "  placeholder="name" name="name">
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="form-div">
                                     <label for="email" class="register-text">Your email</label>
-                                    <input type="email" class="form-control border register-text"  placeholder="Email@gmail.com" name="email">
+                                    <input type="email" class="form-control border "  placeholder="Email@gmail.com" name="email">
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="form-div">
                                     <label for="password" class="register-text">Password</label>
                                     <input type="password" class="form-control border"  placeholder="••••••••" name="password">
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="form-div">
                                     <label for="password_confirmation" class="register-text">password confirmation</label>
                                     <input type="password" class="form-control border"  placeholder="••••••••" name="password_confirmation">
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="form-div">
                                     <label for="image" class="register-text">image</label>
                                     <input type="file" class="form-control border"  placeholder="••••••••" name="image">
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <label for="role" class="register-text">student/teacher</label>
+                                <div class="form-div">
+                                <label for="role" class="register-text">student/teacher</label>
                                 <select name="role" class="form-control border" id="role">
                                     <option  value="student">student</option> 
                                 <option value="teacher">teacher</option>
                                 </select>
                                 </div>
-                            </div>
+                           
                           
                                
                             <div class="form-div">
