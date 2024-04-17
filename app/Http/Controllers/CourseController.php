@@ -115,7 +115,7 @@ public function cources_for_student(){
      * Update the specified resource in storage.
      */
     public function update(Request $request, Course $Course)
-    {
+    {      
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -134,7 +134,9 @@ public function cources_for_student(){
                         ->where('id','!=',$Course->id)
                         ->where('start_time','<=',$request->start_time,'<=','end_time')
                         ->where('start_time','<=',$request->end_time,'<=','end_time')->first();
-      if($exsist != null){
+                            
+      if($exsist != null && $exsist !=$Course){
+        dd($exsist);
         return redirect()->back()->with('error','this classe alredy reserved in this time');
       }
         if($request->hasFile('image')){
@@ -181,3 +183,52 @@ public function cources_for_student(){
         return back()->with('success','cource accepted succesfuly');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

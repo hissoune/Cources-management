@@ -40,19 +40,19 @@
             <input type="file" id="image" name="image" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
         </div>
         <div class="mb-4">
-            <label for="date" class="block text-sm font-medium text-gray-700">Starting Time:</label>
-            <input type="date-local" id="date" name="date" value="{{ $Course->date }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <label for="date" class="block text-sm font-medium text-gray-700">Date:</label>
+            <input type="date" id="date" name="date" value="{{ $Course->date }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             @error('date')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
         @enderror
         </div>
         <div class="mb-4">
             <label for="start_time" class="block text-sm font-medium text-gray-700">Starting Time:</label>
-            <input type="datetime-local" id="start_time" name="start_time" value="{{ $Course->start_time }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <input type="time" id="start_time" name="start_time" value="{{ $Course->start_time }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
         </div>
         <div class="mb-4">
             <label for="end_time" class="block text-sm font-medium text-gray-700">ending Time:</label>
-            <input type="datetime-local" id="end_time" name="end_time" value="{{ $Course->end_time }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            <input type="time-local" id="end_time" name="end_time" value="{{ $Course->end_time }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
         </div>
                 
 

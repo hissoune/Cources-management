@@ -8,6 +8,9 @@
 
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/fillier.css') }}">
         
        
     </head>
@@ -108,6 +111,7 @@
     <script src="{{ asset('./js/ff.js') }}"></script>          
     <script src="{{ asset('./js/js.js') }}"></script>
     <script src="{{ asset('./js/pdf.js') }}"></script>
+    <script src="{{ asset('./js/serch_mobile.js') }}"></script>
     
 
     </body>

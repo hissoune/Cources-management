@@ -1,0 +1,81 @@
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Section Styles */
+.pouler_fillier {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.pouler_fillier h1 {
+    color: #162239fc;
+    padding-top: 3%;
+}
+
+/* Card Styles */
+.fillier-card {
+    transition: box-shadow 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius:1px;
+}
+.fillier-card a{
+    text-decoration:none;
+}
+.fillier-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow on hover */
+}
+
+.fillier-card .card-body {
+    padding: 10px;
+}
+
+.fillier-card .card-image {
+    margin-bottom: 10px;
+}
+
+.fillier-card .card-image img {
+    width: 50px;
+    max-height:10px !important;
+    display: block;
+}
+
+.fillier-card .title {
+    color: black;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.fillier-card .title:hover {
+    /* Ensure no additional text-decoration is applied on hover */
+    text-decoration: none;
+}
+
+/* Fillier Grid Styles */
+.fillier-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 992px) {
+    .fillier-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .fillier-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .fillier-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,15 @@
+
+/************footer*************/
+
+footer {
+    background-color: #162239fc;
+    text-align: center;
+    color:#fff;
+    font-weight:600;
+    margin:0;
+    padding:0.9em;
+}
+
+footer p {
+    margin-bottom: 0;
+}

@@ -12,9 +12,9 @@
                                 <img src="/storage/{{ $cor->image }}" alt="teacher image">
                             </div>
                             <div class="card-body">
-                                <p>{{ $cor->name }}</p>
+                                <h5>{{ $cor->name }}</h5>
                                 <hr>
-                                <p>{{ $cor->date }}</p>
+                                <h5>{{ $cor->date }}</h5>
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <p><strong>S </strong>{{ $cor->start_time}}</p>
@@ -33,33 +33,34 @@
                 </div>
                 </div>
                 </section>
-           <section>
-            <div class="container">
-            <div class=" latest_cources">
-                <h1 class="mb-5">populer filliers</h1>
-                <div class=" my-5">
-                    @foreach($filliers as $fillier)
-                        <div class="">
-                          <a href="{{ route('fillter_fillier', $fillier) }}" >
-                            <div class="card mx-auto my-3">
-                                <div class="card-body row">
-                                    <div class="col-sm-6">
-                                        <h5 class="card-title">{{ $fillier->name }}</h5>
-                                        <p class="card-text">{{ $fillier->description }}</p>
-                                        <p class="card-text">{{ $fillier->Coureces->count() }} Courses</p>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        @foreach($fillier->Coureces as $course)
-                                            <img width="50" src="/storage/{{ $course->image }}" alt="course image">
-                                        @endforeach
-                                    </div>
+                <section>
+                    <div class="container">
+                        <div class="pouler_fillier">
+                            <h1 class="mb-5">Popular filliers</h1>
+                            <div class="fillier-grid">
+                                @foreach($filliers as $fillier)
+                                <div class="fillier-card">
+                                    <a href="{{ route('fillter_fillier', $fillier) }}">
+                                        <div class="card-body">
+                                            <div class="card-info">
+                                                <h4 class="title">{{ $fillier->name }}</h4>
+                                                <p class="card-text">{{ $fillier->description }}</p>
+                                                <p class="card-text">{{ $fillier->Coureces->count() }} Courses</p>
+                                            </div>
+                                            <div class="card-images">
+                                                @foreach($fillier->Coureces as $course)
+                                                <img width="50" src="/storage/{{ $course->image }}" alt="course image">
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                </a>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
-                         </div>
-                 </section>
+                    </div>
+                </section>
+                
                  <section>
                            <div class="container">
                         <div class=" latest_cources">

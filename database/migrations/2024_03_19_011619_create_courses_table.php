@@ -23,6 +23,7 @@ return new class extends Migration
             $table->Time('end_time');
             $table->foreignId('classes_id')->constrained('classes');
             $table->unique(['start_time','end_time','classes_id']);
+        
             $table->boolean('accepted')->default(false);
             $table->foreignId('fillier_id')->constrained('filliers');
             $table->foreignId('users_id')->constrained('users');
