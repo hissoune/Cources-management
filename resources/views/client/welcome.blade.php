@@ -2,12 +2,13 @@
     <x-slot name="slot">
       
                 <section>
-                    <div class="container">
+                    <div class="nta-container">
+                    
                     <div class=" latest_cources">
                         <h1 class="">latest Corces</h1>
                 <div class="teachers-grid">
                     @foreach($cources as $cor)
-                        <div class="teacher-card">
+                        <div class="cource-card">
                             <div class="img-container">
                                 <img src="/storage/{{ $cor->image }}" alt="teacher image">
                             </div>
@@ -34,7 +35,7 @@
                 </div>
                 </section>
                 <section>
-                    <div class="container">
+                    <div class="nta-container">
                         <div class="pouler_fillier">
                             <h1 class="mb-5">Popular filliers</h1>
                             <div class="fillier-grid">
@@ -62,16 +63,20 @@
                 </section>
                 
                  <section>
-                           <div class="container">
+                           <div class="nta-container">
                         <div class=" latest_cources">
                             <h1 class="mb-5">Famus teacheres</h1>
                         <div class="teachers-grid teach">
                             @foreach($Teachers as $Teacher)
                                 
                                     <div class="famus_teachers">
+
                                         <img src="/storage/{{ $Teacher->image }}" alt="teacher image">
+                                        
                                        <a href="{{ route('teacheres_profile', $Teacher) }}"><h4>{{ $Teacher->name }}</h4></a> 
+
                                        <h6>+{{ $Teacher->followers->count() }} follower</h6>
+
                                     </div>
                                     {{-- <div class="card-body">
                                         <p>{{ $Teacher->name }}</p>

@@ -17,7 +17,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: rgba(120, 150, 150, 0.1);
+    background-color:rgba(4, 12, 12, 0.8);
     overflow-x: hidden;
     margin-top: 3.8rem; /* Adjust this value based on the height of your fixed navigation */
 
@@ -109,7 +109,7 @@ buutton:hover{
 }
 .searsh input{
     padding:2%;
-    width:20rem;
+    width:15rem;
     border-radius:20rem;
     outline:none;
     border:solid 1px gray;
@@ -119,11 +119,11 @@ buutton:hover{
 }
 .result {
     position: fixed;
-    top: 3.8rem;
-    left: 26%;
+    top: 3.1rem;
+    left: 29%;
     z-index: 99999;
     padding-y:2%;
-    width:20rem;
+    width:15rem;
     max-height: 35vh;
     display: block;
     margin: 0 auto;
@@ -215,14 +215,22 @@ buutton:hover{
 
 /* latest cources */
 
-
+.nta-container{
+    display:flex;
+    justify-content:center;
+}
 .latest_cources {
+  
+    width:95%;
     margin-bottom:4%;
-    margin-top:4%;   
+    margin-top:6%;   
+    background-color: #24262b;
+
+    opacity: .90;
 
 }
 .latest_cources h1{
-   color: #162239fc;
+   color: bleu;
    padding-top:3%;
 
 }
@@ -234,7 +242,7 @@ buutton:hover{
 
 
 #navbar-scroll-boo {
-    background-color: rgba(255,200,150,1,5); 
+    background-color: #24262b; 
 }
 
 
@@ -546,126 +554,212 @@ h1{
     font-size: 0.9em;
 }
 /*********register and login forms**********/
-.register-text {
-    color: #000;
-    font-weight:bold;
-    margin: 0;
-    padding: 10px;
+.login-box {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
     text-align: center;
-}
-.fome_style{
-    background-color: rgba(159, 200, 201, 0.1);
-    border-radius:2%;
-    border:solid 1px #fff;
-    padding: 3rem 3rem;
-    box-shadow: 1px 8px 8px rgba(0, 0, 0, 0.6);
-
-}
-
-
-.form-container{
-    display:flex;
-    justify-content:center;
-    margin:5%
-}
-
-.register-form 
-option {
-    background: rgba(250, 250, 250, 0.1);
-    border: none;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input,select{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
     color: #fff;
-    margin: 1rem auto;
-    padding: 10px;
-    width: 50%;
-}
-
-.form-div{
-    margin-bottom:3%;
-}
-.form-div button{
-    border-radius:10px;
-        display:block;
-        margin:0 auto;
-        margin-top:10%;
-        border: none; 
-        font-weight:bold;
-        border-radius:5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        background-color: #f8b400; 
-        color: #fff;
-        cursor: pointer; 
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .form-div button:hover{
-        transform: scale(1.05);
-    }
-::-webkit-input-placeholder {
-    color: black !important;
-    opacity: 1;
-}
-
-::-moz-placeholder {
-    color: black !important;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: black !important;
-    opacity: 1;
-    /* Firefox */
-}
-
-::-ms-input-placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black !important;
-    opacity: 1;
-    /* Firefox */
-}
-
-::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black !important;
-    opacity: 1;
-    /* Firefox */
-}
-
- :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: black !important;
-}
-
- ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: black !important;
-}
-
-.register {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    height: auto;
-    margin-top: 7%;
-}
-.register-form .btn {
-    background-color: #f5a425;
-    color: #fff;
-    font-weight: 600;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 20px auto;
-    border-radius: 1;
-    padding: 10px 15px;
-}
-
-.register-form .btn:hover {
+    margin-bottom: 30px;
     border: none;
-    box-shadow: #fff;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box select option {
+    width: 100%;
+    padding: 10px 3px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color:rgba(0,0,0,0.9);
+    appearance: none; /* Removes default styles (not supported in all browsers) */
+    -webkit-appearance: none; /* For Safari/Chrome */
+    -moz-appearance: none; /* For Firefox */
 }
-.register-form  p{
-    color:#fff;
-    text-align:center;
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
 }
+
+/* Hide the default file input */
+input[type="file"] {
+    
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Style the label when file is chosen */
+input[type="file"]:focus + .custom-file-upload {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+input[type="file"]:hover{
+    background: #f5a425;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f5a425,
+                0 0 25px #f5a425,
+                0 0 50px #f5a425,
+                0 0 100px #f5a425;
+}
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #f5a425;
+    font-size: 12px;
+  }
+  
+  .login-box form button {
+    background-color:transparent;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #f5a425;
+    border:0;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .login-box button:hover {
+    background: #f5a425;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f5a425,
+                0 0 25px #f5a425,
+                0 0 50px #f5a425,
+                0 0 100px #f5a425;
+  }
+  
+  .login-box button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f5a425);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #f5a425);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #f5a425);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #f5a425);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
 
 /*********end register and login forms**********/
 
@@ -682,7 +776,65 @@ option {
 /******courses******/
 
 .lesson {
-    padding-bottom: 20px;
+    padding: 2rem;
+}
+.lesson h2{
+    color:#ffff;
+    padding:3px;
+    width:70%;
+    font-weight:bold;
+    display:block;
+    margin:0 auto;
+    background-color:#162239fc;
+}.FILLS {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top:3rem;
+    margin-bottom:3rem;
+
+}
+
+.btn-container {
+     display: flex;
+     justify-content:center;
+     overflow-x: auto;
+     scroll-behavior: smooth;
+}
+
+.carousel-button {
+    flex: 0 0 auto;
+    padding: 4px;
+    margin-right: 10px;
+    font-weight:bold;
+    background: rgba(250, 50, 250, 0.1);
+    border-radius:6px;
+    border: none;
+    cursor: pointer;
+}
+.carousel-button:hover{
+    background: rgba(250, 50, 200, 0.1);
+    color:#fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 .item {
@@ -922,6 +1074,7 @@ option {
     }
 }
 
+
 /************contact************/
 
 .contact {
@@ -950,12 +1103,12 @@ option {
     border: none;
     padding: 1rem;
 }
-
+/* 
 input.form-control,
 textarea.form-control {
     border: none !important;
     box-shadow: none !important;
-}
+} */
 
 .contact-content .btn {
     background-color: #f5a425;
@@ -980,15 +1133,28 @@ textarea.form-control {
 
 
 .teach{
-    background-color: rgba(30, 50, 50, 0.1);
     border-radius:10px;
+
+}
+.famus_teachers{
+    background-color:#fff;
+    width:100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
+
+    border-radius:10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding:5px;
+
+}
+.famus_teachers:hover{
+    transform: scale(1.1); /* Scale up to 1.1 times on hover */
 
 }
 .famus_teachers img{
     border-radius: 50%; 
-    width: 100%; 
-    height: 80%; 
-    object-fit: cover; 
+    width:50%; 
+    height:50%; 
+    object-fit:cover; 
     display: block; 
     margin: 0 auto;
     border: 2px solid #000; 
@@ -997,31 +1163,49 @@ textarea.form-control {
 }
 .famus_teachers h4 {
     margin-top:3%;
-    color: #000;
+    color: #24262b;
     text-align:center;
-    font-weight: 700;
+    font-weight:bold;
 }
 .famus_teachers h6 {
     margin-top:3%;
-    color: #000;
+    color:#000;
     text-align:center;
-    font-weight: 400;
-    border-bottom:1px solid gray; 
+    font-weight:400;
+    border-top:1px solid gray; 
+}
+.famus_teachers a{
+    text-decoration:none;
+
+}
+.famus_teachers h4:hover{
+    color:#f5a425;
 }
 /* Global styles */
 
-.container {
+.container
+    {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
-}
+    }
 
 /* Teachers Section */
 .teachers-section {
-    background-color: #060f30;
     padding: 40px 0;
 }
-
+.teachers-section .title{
+    color:#ffff;
+    padding:3px;
+    width:70%;
+    display:block;
+    margin:0 auto;
+    border-radius:10px;
+    background-color:#24262b;
+}
+.teachers-section .title h3{
+    font-weight:bold;
+    text-transform: uppercase;
+}
 /* Teachers Grid */
 .teachers-grid {
     display: grid;
@@ -1054,6 +1238,9 @@ textarea.form-control {
 /* Teacher Card */
 
 
+  
+  
+  
 /* Button Group */
 .button-group {
     display: flex;
@@ -1074,12 +1261,11 @@ textarea.form-control {
 }
 
 .btn-see-profile {
-    background-color: #ffffff;
+    background-color: #f5a425;
     color: #000000;
 }
 .btn-see-profile:hover{
-    background-color: #000000;
-    color: #ffffff;
+    background-color:#FC3;
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -1127,7 +1313,7 @@ textarea.form-control {
         border:solid 1px gray;
         font-size:10px;
         margin-top:10px;
-        background-color: rgba(100, 150, 150, .9);
+        background-color: rgba(150, 200, 200, .9);
         box-shadow: 0 2px 8px rgba(0, 0, 10, 0.6);
     
     
@@ -1143,7 +1329,7 @@ textarea.form-control {
         display: block;
         margin: 0 auto;
         border-radius:0px;
-        background-color: rgba(100, 150, 150, .9);
+        background-color: rgba(150, 200, 200, .9);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         overflow-y: auto; 
     }

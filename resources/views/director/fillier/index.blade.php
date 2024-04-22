@@ -8,7 +8,7 @@
         <div class="relative overflow-x-auto my-6">
 
             <button data-modal-target="#crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                Toggle modal
+                add fillier
             </button>
   
             <div id="crud-modal" class="fixed inset-0 hidden overflow-y-auto overflow-x-hidden z-50 justify-center items-center w-full md:inset-0">
@@ -72,15 +72,13 @@
 
                         <td class="px-6 py-4 flex justify-around">
 
-                            <form action="" method="post" >
-                                @csrf
-                                @method('put')
- 
+                            <form action="{{ route('fillier.edit',$item) }}"  >
+                               
                                  <button class="btn bg-green-500 text-white rounded p-1">Edit</button>
                              </form>
-                            <form action="" method="POST">
+                            <form action="{{ route('fillier.destroy',$item) }}" method="POST">
                                 @csrf
-                                @method('put')
+                                @method('delete')
                                 <button class="btn bg-red-500 text-white rounded p-1">delete</button>
                             </form>
                             

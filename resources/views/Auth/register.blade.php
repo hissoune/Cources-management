@@ -1,8 +1,8 @@
-<x-home-layout>
+<x-guest-layout>
     <x-slot name="slot">
         <section class="register">    
             <h1 class="">
-                Create account
+                <a class=" logo" href="{{ route('/') }}"><span>GRAD</span> SCHOOL</a>
             </h1>            
                     <div class="form-container">
 {{--                         
@@ -45,7 +45,7 @@
                             </p>
                         </form> --}}
 
-                        <form action="{{ route('registred') }}" method="POST" class="form-group fome_style" enctype="multipart/form-data">
+                        {{-- <form action="{{ route('registred') }}" method="POST" class="form-group fome_style" enctype="multipart/form-data">
                             @csrf
                         
                          
@@ -83,7 +83,53 @@
                                 <button type="submit" >Register</button>
     
                             </div>
-                        </form>
+                        </form> --}}
+
+                        <div class="login-box ">
+                            <h2>Register</h2>
+                            <form action="{{ route('registred') }}" method="POST" >
+                                @csrf
+                                <div class="user-box">
+                                    <input type="text" name="name" required="">
+                                    <label>username</label>
+                                  </div>
+                              <div class="user-box">
+                                <input type="email" name="email" required="">
+                                <label>email</label>
+                              </div>
+                              
+                              <div class="user-box">
+                                <input type="password" name="password" required="">
+                                <label>Password</label>
+                              </div>
+                              <div class="user-box">
+                                <label for="imageInput" class="custom-file-upload">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-upload mb-2" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+                                      </svg> Choose Image
+                                </label>
+                                <input type="file" id="imageInput" name="image" accept="image/*" required>
+                            </div>
+                              <div class="user-box">
+                                    <select name="role" id="">
+                                        <option disabled selected>register as</option>
+                                        <option  value="student">student</option> 
+                                        <option value="teacher">teacher</option>  
+                                    </select>   
+                              </div>
+                              <button type="submit">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Register
+                              </button>
+                              <a href="{{ route('login') }}" >allredy registred?</a>
+
+                            </form>
+                          </div>
+                    </div>
                     </div>
                
           </section>

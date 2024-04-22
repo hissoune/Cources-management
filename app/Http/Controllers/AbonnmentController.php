@@ -129,4 +129,6 @@ class AbonnmentController extends Controller
         ]);
        return redirect()->route('Abonnments_teacher')->with('success','abonnment upgraded succesfully');
     }
+
+    
 }

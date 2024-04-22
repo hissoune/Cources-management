@@ -3,10 +3,10 @@
 
         <section class="py-5">
             <div class="container">
-              <div class="row gx-5 border p-3">
+              <div class="row gx-5 cource_details">
                 <aside class="col-lg-6">
-                  <div class=" rounded-4 mb-3 d-flex justify-content-center ">
-                      <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="/storage/{{ $cor->image }}" />
+                  <div class=" image_deatls ">
+                      <img class="rounded-4 fit" src="/storage/{{ $cor->image }}" />
                    
                   </div>
                  

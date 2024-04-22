@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Fillier;
+use App\Models\Abonnment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,5 +43,19 @@ class Admincontroller extends Controller
     public function profile(){
         $user=Auth::user();
        return view('profile',compact('user'));
+    }
+
+    public function director_statistique(){
+        $filliers = Fillier::all();
+        $cources=Course::all();
+        $Abonnments=Abonnment::all();
+        $students=User::whereHas('roles',function($query){
+            $query->where('name','student') ;
+        })->get();
+        $Teachers=User::whereHas('roles',function($query){
+            $query->where('name','teacher') ;
+        })->get();
+        return view('director',compact('filliers','cources','Abonnments','students','Teachers'));
+
     }
 }

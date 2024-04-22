@@ -69,47 +69,29 @@
 <section id="filteredContent" class="lesson">
         
     <div class="container">
-        <div style="margin-bottom: 3rem;">
-           <h2 class="text-warning text-center my-4">Cources</h2>
+        <div class="title">
+           <h2 class="text-warning ">Cources</h2>
         </div>
-        <div style="margin-bottom: 3rem; overflow-x: auto;" class="container">
-            <style>
-                .btn-container {
-                    display: flex;
-                    flex-wrap: nowrap;
-                    gap: 10px; 
-                    padding: 10px 0; 
-                }
-        
-                .btn-container .col {
-                    flex: 0 0 auto;
-                    width: auto;
-                }
-        
-                .btn-container .btn {
-                    width: 100%;
-                }
-            </style>
+           
          
-            <div class="row flex-nowrap btn-container">
-                <div class="container">
-                    <div class="row flex-nowrap btn-container">
-                        @foreach ($filliers as $item)
-                        @if ($item->Coureces)
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <button class="btn btn-outline-warning btn-rounded" onclick="filterFillier('{{ route('fillter_fillier', $item) }}')">{{ $item->name }}</button>
-                        </div>
-                        @endif
-                       
-                        @endforeach
-                    </div>
-                </div>
+      
+        <div class="FILLS">
+            <div class="btn-container" id="buttonContainer">
+                @foreach ($filliers as $item)
+                <button class="carousel-button" onclick="filterFillier('{{ route('fillter_fillier', $item) }}')">{{ $item->name }}</button>
+                @endforeach
             </div>
+            <button class="carousel-btn prev-btn" onclick="scrollCarousel(-1)">❮</button>
+            <button class="carousel-btn next-btn" onclick="scrollCarousel(1)">❯</button>
         </div>
-
-        <div class="teachers-grid">
+        <div class="row">
+            <div class="col-lg-2 mt-5">
+                ggg
+            </div>
+            <div class="col-lg-10">
+        <div class="teachers-grid   border">
             @foreach($Course as $cor)
-                <div class="teacher-card">
+                <div class="cource-card">
                     <div class="img-container">
                         <img src="/storage/{{ $cor->image }}" alt="teacher image">
                     </div>
@@ -132,7 +114,8 @@
                 </div>
             @endforeach
         </div>
-        
+    </div>
+    </div>
     </div>
 </section>
 

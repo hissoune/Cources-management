@@ -12,4 +12,7 @@ class Classe extends Model
         'name',
         'capacity',
     ];
+    public function Cources(){
+        return $this->hasMany(Course::class,'classes_id');
+    }
 }

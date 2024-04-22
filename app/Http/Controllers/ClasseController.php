@@ -54,7 +54,8 @@ return redirect()->back()->with('success','the Classe added succesfuly');
      */
     public function edit(Classe $classe)
     {
-        //
+        return view('director.Classes.Edit',compact('classe'));
+
     }
 
     /**
@@ -62,7 +63,17 @@ return redirect()->back()->with('success','the Classe added succesfuly');
      */
     public function update(Request $request, Classe $classe)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'Capacity'=>'required',
+         ]);
+         $classe->update([
+            'name'=>$request->name,
+            'capacity'=>$request->Capacity,
+         ]);
+         return redirect()->route('classe.index')->with('success','the Classe updated succesfuly');
+
+        
     }
 
     /**
@@ -70,6 +81,13 @@ return redirect()->back()->with('success','the Classe added succesfuly');
      */
     public function destroy(Classe $classe)
     {
-        //
+      
+       if($classe->Cources){
+        return redirect()->back()->with('error','the Classe cant be deleted because its related with cources');
+
+    }
+    $classe->delete();
+    return redirect()->back()->with('success','the Classe deleted succesfuly');
+
     }
 }

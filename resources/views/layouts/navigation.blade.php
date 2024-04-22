@@ -1,7 +1,7 @@
 
 
 
-<aside class="sidebar bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50  h-[calc(100vh-32px)] w-72  transition-transform duration-300 xl:translate-x-0 "id="mobile-menu">
+<aside class="sidebar "id="mobile-menu">
     <div class=" border-b border-white/20">
       <a class="flex items-center gap-4 py-6 px-8" href="#/">
         {{-- <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">welcome {{ Auth::user()->name }}</h6> --}}
@@ -15,8 +15,8 @@
 
       
     </div>
-    <div class="m-4">
-      <ul class="mb-4 flex flex-col gap-1">
+    <div class="m-4 ">
+      <ul class="mb-4 flex flex-col gap-1 links">
         <li>
           <a aria-current="page" class="active" href="{{ route('/') }}">
             <button class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg active:bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize" type="button">
@@ -71,7 +71,7 @@
           </a>
         </li>
         <li>
-            <a class="" href="{{ route('Classes.index') }}">
+            <a class="" href="{{ route('classe.index') }}">
               <button class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize" type="button">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 text-inherit">
                       <path fill-rule="evenodd" d="M5 2h14a2 2 0 012 2v18a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2zm0 2a.5.5 0 00-.5.5v14a.5.5 0 00.5.5h14a.5.5 0 00.5-.5V4a.5.5 0 00-.5-.5H5zm1 2a1 1 0 00-1 1v2a1 1 0 002 0V7h10v2a1 1 0 002 0V7a1 1 0 00-1-1H6z" clip-rule="evenodd"></path>

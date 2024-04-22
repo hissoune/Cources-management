@@ -12,8 +12,13 @@
 }
 
 .pouler_fillier h1 {
-    color: #162239fc;
-    padding-top: 3%;
+    color: #fff;
+    padding:3px;
+    border-radius:10px;
+    background-color:#24262b
+    
+    
+    ;
 }
 
 /* Card Styles */
@@ -21,13 +26,13 @@
     transition: box-shadow 0.3s ease;
     background-color: #ffffff;
     border: 1px solid #ccc;
-    border-radius:1px;
+    border-radius:5px;
 }
 .fillier-card a{
     text-decoration:none;
 }
 .fillier-card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add box shadow on hover */
 }
 
 .fillier-card .card-body {
@@ -47,6 +52,7 @@
 .fillier-card .title {
     color: black;
     font-size: 16px;
+    font-weight:bold;
     margin-top: 5px;
 }
 

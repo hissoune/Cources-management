@@ -56,7 +56,7 @@ class FillierController extends Controller
      */
     public function edit(Fillier $fillier)
     {
-        //
+        return view('director.fillier.Edit',compact('fillier'));
     }
 
     /**
@@ -64,7 +64,16 @@ class FillierController extends Controller
      */
     public function update(Request $request, Fillier $fillier)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+         ]);
+         $fillier->update([
+             'name'=>$request->name,
+             'description'=>$request->description,
+         ]);
+ 
+         return redirect()->route('fillier.index')->with('success','the fillier updated succesfuly');
     }
 
     /**
@@ -72,6 +81,13 @@ class FillierController extends Controller
      */
     public function destroy(Fillier $fillier)
     {
-        //
+        // dd($fillier->Coureces);
+        if($fillier->Coureces){
+            return redirect()->back()->with('error','the fillier cant be deleted because its related with cources');
+
+        }
+
+        $fillier->delete();
+        return redirect()->back()->with('success','the fillier deleted succesfuly');
     }
 }

@@ -10,11 +10,13 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
+              <div class="image">
               <img src="/storage/{{ $Teacher->image }}" alt="avatar"
-                class="rounded-circle img-fluid" style="width: 150px;">
+                >
               <h5 class="my-3">{{ $Teacher->name }}</h5>
               <p class="text-muted mb-2">{{ ($Teacher->description)?$Teacher->description:'no description'  }}</p>
-             @if($Teacher->id !== Auth::id())
+            </div>
+              @if($Teacher->id !== Auth::id())
               
            
               <div class="d-flex justify-content-center mb-2">

@@ -26,7 +26,7 @@
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form class="p-4 md:p-5" method="POST" action="{{ route('Classes.store') }}">
+                        <form class="p-4 md:p-5" method="POST" action="{{ route('classe.store') }}">
                             @csrf
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
@@ -78,22 +78,20 @@
 
                         <td class="px-6 py-4 flex justify-around">
 
-                            <form action="" method="post" >
-                                @csrf
-                                @method('put')
- 
+                            <form action="{{ route('classe.edit',$item) }}"  >
+                               
                                  <button class="btn bg-green-500 text-white rounded p-1">Edit</button>
                              </form>
-                            <form action="" method="POST">
+                            <form action="{{ route('classe.destroy',$item) }}" method="post">
                                 @csrf
-                                @method('put')
+                                @method('delete')
                                 <button class="btn bg-red-500 text-white rounded p-1">delete</button>
                             </form>
                             
                         </td>
 
                     @empty
-                    <td colspan="12"><h1 class="text-center">no fillier founds</h1></td>
+                    <td colspan="12"><h1 class="text-center">no Classes founds</h1></td>
                 </tr>
                     @endforelse
                 </tbody>

@@ -20,4 +20,8 @@ class Abonnment extends Model
        $Abonnment_resever= Abonnment_Teacher::where('user_id',Auth::id())->where('abonnment_id',$id)->first();
        return $Abonnment_resever;
     }
+
+    public function abonment_reserved(){
+        return $this->hasMany(Abonnment_Teacher::class,'abonnment_id');
+    }
 }

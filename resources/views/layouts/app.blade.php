@@ -12,9 +12,8 @@
 
 </head>
 <body>
-    <div class="min-h-screen bg-gray-50/50 grid grid-cols-4">
 
-      <div class=" xl:col-span-1 col-span-4  ">
+      <div class=" ">
         <div class=" min_nave bg-gradient-to-br from-gray-800 to-gray-900">
         <div class="">
           
@@ -33,24 +32,22 @@
 
       </div>
   
-    <div class="xl:col-span-3 col-span-4 md:mx-0 mx-3 ">
-    <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
-          <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
-            <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
-              <div>
+    <div class="content   ">
+                
+       <h2 class="text-center my-6 p-6"> <a class=" logo " href="{{ route('/') }}"><span>GRAD</span> SCHOOL</a></h2>
+
+     
+    <div class="content_tables">
+            <div class=" border-b font-bold my-3 p-6">
+             
                 @if(@isset($title))
-                <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">{{ $title }}</h6>
-                <p class="antialiased font-sans text-sm leading-normal flex items-center gap-1 font-normal text-blue-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-4 w-4 text-blue-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-                  </svg>
-                  
-                </p>
+                <h1 class="text-center  mb-1 title">{{ $title }}</h1>
+                
                 @endif
-              </div>
+             
               
             </div>
-            <div class="w-full p-6 overflow-x-scroll px-0 pt-0 pb-2">
+            <div class="w-full p-6 overflow-x-scroll overflow-y-scroll  px-0 pt-0 pb-2">
               @if (session('success'))
                   <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                       <span class="block sm:inline">{{ session('success') }}</span>
@@ -60,6 +57,9 @@
                   </div>
               @endif
               @if (session('error'))
+              {{-- <script>
+                windows.alert({{ session('error') }})
+              </script> --}}
               <div class="bg-red-100 border border-red-400 text-white-700 px-4 py-3 rounded relative" role="alert">
                   <span class="block sm:inline">{{ session('error') }}</span>
                   <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
@@ -68,10 +68,9 @@
               </div>
           @endif
 
-              <div>{{ $slot }}</div>
+              <div class="p-6">{{ $slot }}</div>
             </div>
           </div>
-        </div>
       
       <div class="text-blue-gray-600 ">
         <footer class="py-2">
@@ -89,7 +88,6 @@
       </div>
     </div>
 
-    </div>
   <script src="{{ asset('./js/dash.js') }}"></script>
   <script src="{{ asset('./js/addresum.js') }}"></script>
 

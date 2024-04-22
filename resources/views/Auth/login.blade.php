@@ -1,8 +1,8 @@
-<x-home-layout>
+<x-guest-layout>
 <x-slot name="slot">
     <section class="register">
                     <h1 class="">
-                        LOG IN
+                        <a class=" logo" href="{{ route('/') }}"><span>GRAD</span> SCHOOL</a>
                     </h1>
                 <div class="form-container">
                   
@@ -25,26 +25,53 @@
                         don't have an account? <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Register now</a>
                         </p>
                     </form> --}}
-                    <form action="{{ route('logedin') }}" method="POST" class="form-group fome_style">
+                    {{-- <form action="{{ route('logedin') }}" method="POST" class="form-group fome_style">
                         @csrf
                     
-                        <div class="row mb-3">
-                            <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class=" mb-3">
+                            <div class="">
                                 <label for="email" class="register-text">Your email</label>
-                                <input type="email" class="form-control border register-text"  placeholder="Email@gmail.com" name="email">
+                                <input type="email" class="form-control border "  placeholder="Email@gmail.com" name="email">
                             </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="">
                                 <label for="password" class="register-text">Password</label>
                                 <input type="password" class="form-control border"  placeholder="••••••••" name="password">
                             </div>
                         </div>
                       
-                           
-                        <div class="form-div">
-                            <button type="submit" >LOG IN</button>
-
+                        <div>
+                            <a href="" >forgot password?</a>
                         </div>
-                    </form>
+                        <div class="form-div ">
+                            <button type="submit" >LOG IN</button>
+                          
+                        </div>
+                        
+                    </form> --}}
+
+                    <div class="login-box">
+                        <h2>Login</h2>
+                        <form action="{{ route('logedin') }}" method="POST">
+                            @csrf
+                          <div class="user-box">
+                            <input type="email" name="email" required="">
+                            <label>email</label>
+                          </div>
+                          <div class="user-box">
+                            <input type="password" name="password" required="">
+                            <label>Password</label>
+                          </div>
+                          <button type="submit">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            LOG IN
+                          </button>
+                          <a href="{{ route('forget.password') }}" >forgot password?</a>
+
+                        </form>
+                      </div>
                 </div>
         
         
@@ -52,4 +79,4 @@
 </x-slot>
 
 
-</x-home-layout>
+</x-guest-layout>

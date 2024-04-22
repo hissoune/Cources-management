@@ -35,10 +35,8 @@ Route::get('teacheres_profile/{Teacher}',[homecontroller::class,'teacheres_profi
 Route::get('fillter_fillier/{item}',[homecontroller::class,'fillter_fillier'])->name('fillter_fillier');
 
 
-Route::middleware(['auth','role:director'])->group(function(){
-    Route::get('/dasboard', function () {
-        return view('director');
-    })->name('dasboard');
+Route::middleware(['auth','role:director','verified'])->group(function(){
+    Route::get('/dasboard',[Admincontroller::class,'director_statistique'])->name('dasboard');
     Route::get('/show_students',[Admincontroller::class,'show_students'] )->name('show_students');
     Route::get('/show_teachers',[Admincontroller::class,'show_teachers'] )->name('show_teachers');
     Route::get('/cources_tovalidate',[CourseController::class,'cources_tovalidate'] )->name('cources_tovalidate');
@@ -50,11 +48,11 @@ Route::middleware(['auth','role:director'])->group(function(){
     Route::delete('/delete_abonnment{item}',[AbonnmentController::class,'delete_abonnment'] )->name('delete_abonnment');
     Route::post('/Abonnment_store',[AbonnmentController::class,'Abonnment_store'] )->name('Abonnment_store');
     Route::resource('/fillier',FillierController::class );
-    Route::resource('/Classes',ClasseController::class );
+    Route::resource('/classe',ClasseController::class );
     
 });
 
-Route::middleware(['auth','role:teacher'])->group(function(){
+Route::middleware(['auth','role:teacher','verified'])->group(function(){
     Route::get('/teacher', function () {return view('teacher');})->name('teacher');
     Route::resource('/Courses',CourseController::class );
     Route::get('show_reservation',[Reservationcontroller::class,'show_reservation'])->name('show_reservation');
@@ -75,7 +73,7 @@ Route::middleware(['auth','role:teacher'])->group(function(){
 
 
 });
-Route::middleware(['auth','role:student'])->group(function(){
+Route::middleware(['auth','role:student','verified'])->group(function(){
     Route::post('reserve_espec/{cor}',[Reservationcontroller::class,'reserve_espec'])->name('reserve_espec');
     Route::post('evaluate_T',[Evaluationcontroller::class,'evaluate_T'])->name('evaluate_T');
     Route::post('follow',[Evaluationcontroller::class,'follow'])->name('follow');
@@ -84,7 +82,7 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::get('Resume/{cor}',[SummaryController::class,'Resume'])->name('Resume');
 
 });
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth','verified'])->group(function(){
     Route::get('profile',[Admincontroller::class,'profile'])->name('profile');
   
 });

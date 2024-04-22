@@ -1,13 +1,16 @@
-.teacher-card {
-    transition: box-shadow 0.3s ease; 
-    background-color: #ffffff;
-    border:solid 0.1px gray;
+.cource-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    background-color: #fff;
+    border: solid 0.1px gray;
+    border-radius:6px;
     overflow: hidden;
+    transform: scale(1); /* Initial scale (normal size) */
 }
-.teacher-card:hover{
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9); 
 
+.cource-card:hover {
+    transform: scale(1.1); /* Scale up to 1.1 times on hover */
 }
+
 /* Image Container */
 .img-container {
     height: 200px;
@@ -15,8 +18,10 @@
 }
 
 .img-container img {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin-left:5%;
+    margin-top:3%;
     object-fit: cover;
 }
 
@@ -27,7 +32,7 @@
 
 .card-body p {
     margin: 0;
-    color: #333333;
+    color:  #24262b;
     font-weight:bold;
 }
 .card-body h5{
@@ -37,4 +42,95 @@
 .card-body hr {
     margin: 10px 0;
     border: none;
+}
+
+.cource_details{
+    padding:2%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    border-radius:10px;
+    border:solid 0.1px gray;
+    margin-top:5%;
+
+
+}
+.teacher-card{
+    display:flex;
+    transition: box-shadow 0.3s ease; 
+    background-color: #ffffff;
+    border:solid 0.1px gray;
+    overflow: hidden;
+    border-radius:10px;
+    padding:3%;
+    margin-top:20%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    max-height:10rem;
+
+}
+.img {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    width: 100%; /* Ensure the container spans the entire width */
+ 
+}
+.image img{
+    width: 150px; /* Set the width and height to be equal for a perfect circle */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circular container */
+    border: 1px solid gray; /* Optional border style */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+}
+
+.img img {
+    width: 150px; /* Set the width and height to be equal for a perfect circle */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circular container */
+    border: 1px solid gray; /* Optional border style */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+}
+
+.image_deatls{
+    border: 1px solid gray; /* Optional border style */
+    height:100%;
+}
+.image_deatls img{
+    display:block;
+    max-width: 100%; 
+    max-height: 100%;
+    margin:auto auto;
+
+}
+.teacher-body {
+    /* Styles for the container of profile information */
+    padding: 10px; /* Add padding around the content */
+    /* border: 1px solid #ccc; Add a border for visual separation */
+    border-radius: 8px; /* Round the corners of the container */
+    background-color: #f9f9f9; /* Set a light background color */
+}
+
+.teacher-body p {
+    /* Styles for paragraphs (profile information) */
+    margin-bottom: 5px;
+    border-bottom:solid 1px #333033; /* Add space below each paragraph */
+    margin-right: 5%; /* Add a right margin to create spacing */
+    color: #fff; /* Set text color */
+   
+   
+    font-size: 12px; /* Set font size */
+   
+  
+}
+
+.teacher-body p:first-child  p:last-child {
+    /* Styles for the last paragraph (if needed) */
+    margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+    border:0;
+}
+.dmd a{
+    text-decoration:none;
+}
+.teacher-body  h6 {
+    font-weight:bold;
 }

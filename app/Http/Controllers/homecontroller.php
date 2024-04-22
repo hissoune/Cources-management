@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Course;
 use App\Models\Follow;
 use App\Models\Fillier;
+use App\Models\Abonnment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -80,4 +81,6 @@ class homecontroller extends Controller
         return view('client.courcess',compact('Course','filliers'));
 
     }
+
+   
 }
