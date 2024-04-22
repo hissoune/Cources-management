@@ -85,11 +85,31 @@
             <button class="carousel-btn next-btn" onclick="scrollCarousel(1)">❯</button>
         </div>
         <div class="row">
-            <div class="col-lg-2 mt-5">
-                ggg
+
+            <div class="col-lg-2 mt-5 border">
+               
+               <ul class="filer_things">
+                <form  onsubmit="return filter_pr_date('{{ route('filter_by_price') }}')">
+                    @csrf
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="priceRange_tohigh" id="priceLow">
+                            <label for="priceLow">Low to High</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="order_date" id="priceHigh">
+                            <label for="priceHigh">High to Low</label>
+                        </li>
+                    </ul>
+                    <button type="submit">Filter</button>
+                </form>
+                
+               </ul>
+                    
             </div>
+
             <div class="col-lg-10">
-        <div class="teachers-grid   border">
+        <div class="teachers-grid  corses_bord">
             @foreach($Course as $cor)
                 <div class="cource-card">
                     <div class="img-container">

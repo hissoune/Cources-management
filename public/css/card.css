@@ -2,7 +2,7 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
     background-color: #fff;
     border: solid 0.1px gray;
-    border-radius:6px;
+    border-radius:10px;
     overflow: hidden;
     transform: scale(1); /* Initial scale (normal size) */
 }
@@ -24,7 +24,31 @@
     margin-top:3%;
     object-fit: cover;
 }
-
+.filer_things{
+    padding:10px;  
+}
+.filer_things label{
+    font-size: 16px;
+    color:#fff;
+    font-weight:bold;
+}
+.filer_things li{
+    border-bottom:1px solid #fff;
+    padding:3px;
+    margin-top:40px;
+}
+.filer_things  input[type="checkbox"] {
+    transform: scale(1.8);
+    margin:4px; 
+}
+.filer_things button{
+    padding:5px;
+    margin-top:40px;
+    background:#f5a425;
+    border-radius:10px;
+    border:0;
+    color:#fff;
+}
 /* Card Body */
 .card-body {
     padding: 20px;

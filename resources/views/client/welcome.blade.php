@@ -31,6 +31,7 @@
                         </div>
                     @endforeach
                 </div>
+                <button>discover more</button>
                 </div>
                 </div>
                 </section>

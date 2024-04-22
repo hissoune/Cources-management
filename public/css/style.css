@@ -216,18 +216,30 @@ buutton:hover{
 /* latest cources */
 
 .nta-container{
-    display:flex;
-    justify-content:center;
+    display:block;
+    margin:10px auto;
+   width:80%;
 }
 .latest_cources {
-  
-    width:95%;
+    width:100%;
     margin-bottom:4%;
     margin-top:6%;   
     background-color: #24262b;
 
     opacity: .90;
 
+}
+.latest_cources  button{
+    display:block;
+    margin:0 auto;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: #f5a425;
+    padding: 10px 15px;
+    border-radius: 0;
 }
 .latest_cources h1{
    color: bleu;
@@ -776,7 +788,7 @@ input[type="file"]:hover{
 /******courses******/
 
 .lesson {
-    padding: 2rem;
+    padding: 10rem;
 }
 .lesson h2{
     color:#ffff;
@@ -794,7 +806,15 @@ input[type="file"]:hover{
     margin-bottom:3rem;
 
 }
+.corses_bord{
+    border-radius:10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
+    padding-top:100px;
+}
+.cont_corses{
+    margin-top:10%;
 
+}
 .btn-container {
      display: flex;
      justify-content:center;
@@ -807,15 +827,15 @@ input[type="file"]:hover{
     padding: 4px;
     margin-right: 10px;
     font-weight:bold;
-    background: rgba(250, 50, 250, 0.1);
+    color:#fff;
+    background:transparent;
     border-radius:6px;
     border: none;
     cursor: pointer;
 }
+
 .carousel-button:hover{
-    background: rgba(250, 50, 200, 0.1);
-    color:#fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    color:#f5a425;
 
 }
 .carousel-btn {
@@ -1209,7 +1229,7 @@ textarea.form-control {
 /* Teachers Grid */
 .teachers-grid {
     display: grid;
-    gap: 20px;
+    gap: 10px;
     padding:3%;
 }
 
@@ -1223,14 +1243,14 @@ textarea.form-control {
 /* Medium screens (>= 768px and < 992px) */
 @media (min-width: 768px) and (max-width: 991px) {
     .teachers-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        grid-template-columns: repeat(2, 1fr); /* 3 columns */
     }
 }
 
 /* Small screens (< 768px) */
 @media (max-width: 767px) {
     .teachers-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(1, 1fr); /* 2 columns */
     }
 }
 

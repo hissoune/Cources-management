@@ -6,7 +6,7 @@
               <div class="row gx-5 cource_details">
                 <aside class="col-lg-6">
                   <div class=" image_deatls ">
-                      <img class="rounded-4 fit" src="/storage/{{ $cor->image }}" />
+                      <img class="" src="/storage/{{ $cor->image }}" />
                    
                   </div>
                  

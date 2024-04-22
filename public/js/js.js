@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function filterFillier(route) {
+
     const xhr = new XMLHttpRequest();
     
     xhr.onreadystatechange = function() {
@@ -59,6 +60,8 @@ function filterFillier(route) {
     xhr.open('GET', route);
     xhr.send();
 }
+
+
 const loginLink = document.getElementById('loginLink');
 const logMessage = document.getElementById('logmsg');
 

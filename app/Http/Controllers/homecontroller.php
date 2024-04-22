@@ -8,6 +8,7 @@ use App\Models\Follow;
 use App\Models\Fillier;
 use App\Models\Abonnment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 class homecontroller extends Controller
@@ -82,5 +83,26 @@ class homecontroller extends Controller
 
     }
 
+    
+    public function filter_pr_date(Request $request)
+    {
+        $query = Course::query();
+    
+        if ($request->has('price_low_to_high')) {
+            $query->orderBy('price', 'asc');
+        }
+    
+        if ($request->has('order_date')) {
+            $query->orderBy('date', 'asc');
+        }
+    
+        // Log the generated SQL query for debugging
+        Log::info($query->toSql());
+    
+        $courses = $query->get();
+    
+        dd($courses);
+    }
+    
    
 }

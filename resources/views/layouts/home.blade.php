@@ -99,6 +99,7 @@
     <script src="{{ asset('./js/pdf.js') }}"></script>
     <script src="{{ asset('./js/serch_mobile.js') }}"></script>
     <script src="{{ asset('./js/smoth.js') }}"></script>
+    <script src="{{ asset('./js/filter_by_price.js') }}"></script>
     
 
     </body>
