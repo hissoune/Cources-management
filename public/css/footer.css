@@ -19,7 +19,7 @@
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #f5a425;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -50,7 +50,7 @@
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
-	color: #ffffff;
+	color: #000;
 	transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{

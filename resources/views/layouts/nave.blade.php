@@ -30,13 +30,7 @@
                     <li class="nav-item list-style">
                         <a class="nav-link active" aria-current="page" href="{{ route('/') }}">Home</a>
                     </li>
-                    <li class="nav-item dropdown list-style">
-                        <a class="nav-link " href="{{ route('about') }}" 
-                            >
-                            about
-                        </a>
-                       
-                    </li>
+                    
                     
                     <li class="nav-item list-style">
                         <a class="nav-link" href="{{ route('courcess') }}">courses</a>
@@ -128,7 +122,13 @@
         <h1>
             <span>YOUR</span> CLASSROOM
         </h1>
-        <button>discover more</button>
+        @auth
+            @else
+            <form action="{{ route('login') }}">
+                <button class="disc_mr">discover more</button>
+                </form>
+        @endauth
+        
 @endif
     
 </div>

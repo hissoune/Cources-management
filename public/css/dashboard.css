@@ -20,6 +20,7 @@ body {
     position:fixed;
     top:0;
     width:15%;
+    height:100%;
     z-index:99999;
     display: flex;
    
@@ -48,31 +49,7 @@ body {
     font-size: 30px;
     font-weight: 800;
 }
-footer{
-  
-}
-.logo span {
-    color: #f5a425;
-}
-.title{
-  color:#f5a425;
-  font-size: 30px;
-  font-weight: 800;
-}
-  
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .nav-links a {
-    color: #ffffff;
-    font-size: 1rem;
-  }
-  ul li:hover{
-    background:rgba(0, 120, 120, 0.2);
 
-  }
 
   
 

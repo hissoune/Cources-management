@@ -1,26 +1,25 @@
 
-function filterByPrice(url) {
-    var form = document.getElementById('filter_things');
+function filter_pr_date(url) {
+    var form = document.getElementById('form-dd');
     var formData = new FormData(form);
-
+    
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
+    xhr.open('GET', url, true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Request successful, handle response
-                console.log(xhr.responseText);
-                // Implement code to update your UI based on response
+                // Assuming the response is HTML content
+                document.body.innerHTML = xhr.response;
             } else {
-                // Request failed, handle error
                 console.error('Filter request failed');
             }
         }
     };
 
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.send(formData);
+    // Send the form data as query parameters in the URL
+    xhr.send(new URLSearchParams(formData).toString());
 
-    return false; // Prevent default form submission
+    return false;
 }
+

@@ -1,7 +1,7 @@
 
 <x-home-layout>
     <x-slot name="slot">
-<section  style="background-color: #060f30;"  >
+<section   >
 
     <div class="container py-5 h-100">
    
@@ -10,11 +10,11 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src="/storage/{{ $user->image }}" alt="avatar"
+              <img src="storage/{{ $user->image }}" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">{{ $user->name }}</h5>
+              <h5 class="my-3 text-dark">{{ $user->name }}</h5>
               @role('teacher')
-              <p class="text-muted mb-2">{{ ($user->description)?$user->description:'no description'  }}</p>
+              <p class="text-muted mb-2 ">{{ ($user->description)?$user->description:'no description'  }}</p>
              @endrole
             </div>
           </div>
@@ -23,23 +23,23 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
               </ul>
             </div>
@@ -50,7 +50,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Full Name</p>
+                  <p class="mb-0 text-dark">Full Name</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ $user->name }}</p>
@@ -59,7 +59,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Email</p>
+                  <p class="mb-0 text-dark">Email</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ $user->email }}</p>

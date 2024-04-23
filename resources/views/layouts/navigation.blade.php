@@ -2,7 +2,7 @@
 
 
 <aside class="sidebar "id="mobile-menu">
-    <div class=" border-b border-white/20">
+    <div class=" border-b border-white/20 ">
       <a class="flex items-center gap-4 py-6 px-8" href="#/">
         {{-- <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">welcome {{ Auth::user()->name }}</h6> --}}
 

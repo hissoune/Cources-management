@@ -1,7 +1,7 @@
 
 <x-home-layout>
     <x-slot name="slot">
-<section  style="background-color: #060f30;"  >
+<section    >
 
     <div class="container py-5 h-100">
    
@@ -36,53 +36,47 @@
                 
                 {{-- <button type="button" class="btn btn-outline-primary ms-1">ra</button> --}}
                           <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-warning ms-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Rate
-                    </button>
+                          <button id="rateButton" class="btn btn-outline-warning ms-1">Rate</button>
 
-                    <!-- Modal -->
-                    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog ">
-                        <div class="modal-content " style="background-color: #ccd0df;">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">rate {{$Teacher->name  }}</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form class="p-4 md:p-5" method="POST" action="{{ route('evaluate_T') }}">
-                              @csrf
-                              <div class="row g-4 mb-4">
+                          <div id="modalContainer" class="modal-container">
+                            <div id="modalContent" class="modal-content" style="background-color: #ccd0df;">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                                <button id="closeModal" class="btn-close" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <form class="p-4 md:p-5" method="POST" action="{{ route('evaluate_T') }}">
+                                  @csrf
                                   <input type="hidden" name="teacher_id" value="{{ $Teacher->id }}">
-                                  <div class="col-12">
+
+                                  <div class="row g-4 mb-4">
+                                    <input type="hidden" id="teacherIdInput" name="teacher_id">
+                                    <div class="col-12">
                                       <label for="note" class="form-label">Your comment</label>
                                       <input type="text" name="note" id="note" class="w-100 p-1 rounded border-0 border-outline-warning" placeholder="Type " required="">
+                                     
                                       @error('note')
-                                      <p class="text-danger">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                                  <div class="col-12">
+                                    <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                    </div>
+                                    <div class="col-12">
                                       <label for="mark" class="form-label">rate</label>
                                       <input id="mark" type="number" name="mark" class="w-100 p-1 rounded border-0 " placeholder="00">                    
                                       @error('mark')
                                       <p class="text-danger">{{ $message }}</p>
                                       @enderror
+                                      
+                                    </div>
                                   </div>
-                                  
+                                  <div class="modal-footer">
+                                    <button type="submit"  class="btn btn-outline-success">Save</button>
+                                    <button type="button" id="closeButton" class="btn btn-outline-secondary">Close</button>
+                                  </div>
+                                </form>
                               </div>
-                              <div class="modal-footer">
-                                <button type="submit" class="btn btn-outline-success">Save</button>
-                              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-
-                              </div>
-                              
-                            </form>
-                          
+                            </div>
                           </div>
                           
-                        </div>
-                      </div>
-                    </div>
-
               </div>
               @endif
             </div>

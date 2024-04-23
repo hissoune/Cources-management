@@ -120,7 +120,7 @@ buutton:hover{
 .result {
     position: fixed;
     top: 3.1rem;
-    left: 29%;
+    left: 39.5%;
     z-index: 99999;
     padding-y:2%;
     width:15rem;
@@ -151,6 +151,48 @@ buutton:hover{
    justify-content:start;
    text-align:start;
 }
+
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .modal-body {
+    padding-bottom: 20px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
 .result .result_item button svg{
    margin:2%;
     width:7%;
@@ -163,7 +205,7 @@ buutton:hover{
 }
 .card-fill {
     transition: box-shadow 0.3s ease; 
-    background-color: #ffffff;
+    background: rgba(4, 8, 8, 0.3);
     border-radius: 8px;
     
     overflow: hidden;
@@ -179,7 +221,7 @@ buutton:hover{
 .card-fill.card-body {
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center; 
 }
 
@@ -189,7 +231,12 @@ buutton:hover{
     color: #333333;
     margin-bottom: 10px;
 }
-
+.paginate{
+   display:flex;
+   justify-content:center;
+   margin-bottom:3%;
+    
+}
 .card-fill.card-text {
     color: #666666;
     margin-bottom: 10px;
@@ -225,7 +272,7 @@ buutton:hover{
     margin-bottom:4%;
     margin-top:6%;   
     background-color: #24262b;
-
+    padding:10px;
     opacity: .90;
 
 }
@@ -233,6 +280,7 @@ buutton:hover{
     display:block;
     margin:0 auto;
     border: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
     color: #fff;
     font-weight: 700;
     font-size: 1em;
@@ -240,9 +288,34 @@ buutton:hover{
     background-color: #f5a425;
     padding: 10px 15px;
     border-radius: 0;
+    transform: scale(1); 
+}
+
+ .disc_mr{
+    display:block;
+    margin:0 auto;
+    border: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: #f5a425;
+    padding: 10px 15px;
+    border-radius: 0;
+    transform: scale(1); 
+    margin-bottom:10px;
+}
+.disc_mr:hover{
+    transform: scale(1.1);
+    color:rgba(4, 8, 8, 0.8);
+}
+.latest_cources .disc_mr:hover{
+    transform: scale(1.1);
+    color:rgba(4, 8, 8, 0.8);
 }
 .latest_cources h1{
-   color: bleu;
+   color:#fff;
    padding-top:3%;
 
 }
@@ -345,7 +418,7 @@ buutton:hover{
 .description {
     z-index: 20;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -783,6 +856,44 @@ input[type="file"]:hover{
     align-content: center;
     justify-content: center;
 }
+/* Pagination styles */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination ul li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.pagination ul li a,
+.pagination ul li span {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination ul li.active a {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination ul li.disabled span {
+    color: #ccc;
+}
+
+.pagination ul li a:hover {
+    background-color: #f0f0f0;
+}
 
 
 /******courses******/
@@ -791,13 +902,14 @@ input[type="file"]:hover{
     padding: 10rem;
 }
 .lesson h2{
-    color:#ffff;
+    color:#f5a425;
     padding:3px;
     width:70%;
     font-weight:bold;
     display:block;
+    border-radius:10px;
     margin:0 auto;
-    background-color:#162239fc;
+    background-color:rgba(4, 12, 12, 0.3);
 }.FILLS {
     position: relative;
     overflow: hidden;
@@ -1157,7 +1269,7 @@ textarea.form-control {
 
 }
 .famus_teachers{
-    background-color:#fff;
+    background-color:rgba(4, 8, 8, 0.3);
     width:100%;
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
 
@@ -1183,13 +1295,13 @@ textarea.form-control {
 }
 .famus_teachers h4 {
     margin-top:3%;
-    color: #24262b;
+    color:#f5a425;
     text-align:center;
     font-weight:bold;
 }
 .famus_teachers h6 {
-    margin-top:3%;
-    color:#000;
+    margin-top:10%;
+    color:#fff;
     text-align:center;
     font-weight:400;
     border-top:1px solid gray; 
@@ -1199,7 +1311,7 @@ textarea.form-control {
 
 }
 .famus_teachers h4:hover{
-    color:#f5a425;
+    color: #fff;
 }
 /* Global styles */
 

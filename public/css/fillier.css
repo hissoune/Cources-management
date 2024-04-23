@@ -24,20 +24,22 @@
 /* Card Styles */
 .fillier-card {
     transition: box-shadow 0.3s ease;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+    background-color: rgba(4, 8, 8, 0.3);
     border-radius:5px;
+    box-shadow: 0 0 10px rgba(220, 220, 220, 0.4);
 }
 .fillier-card a{
     text-decoration:none;
 }
 .fillier-card:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add box shadow on hover */
+    border:solid 1px rgba(220, 220, 220, 0.4);
 }
 
 .fillier-card .card-body {
     padding: 10px;
 }
+
 
 .fillier-card .card-image {
     margin-bottom: 10px;
@@ -50,7 +52,7 @@
 }
 
 .fillier-card .title {
-    color: black;
+    color: #fff;
     font-size: 16px;
     font-weight:bold;
     margin-top: 5px;

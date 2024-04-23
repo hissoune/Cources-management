@@ -1,7 +1,8 @@
 .cource-card {
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
-    background-color: #fff;
-    border: solid 0.1px gray;
+
+    background-color:rgba(4, 8, 8, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+
     border-radius:10px;
     overflow: hidden;
     transform: scale(1); /* Initial scale (normal size) */
@@ -10,6 +11,23 @@
 .cource-card:hover {
     transform: scale(1.1); /* Scale up to 1.1 times on hover */
 }
+
+.cource-card button{
+    display:block;
+    margin:0 auto;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: #f5a425;
+    padding: 10px 15px;
+    border-radius: 0;
+}
+/* .card-info{
+    display:flex;
+   justify-content:center;
+} */
 
 /* Image Container */
 .img-container {
@@ -27,6 +45,10 @@
 .filer_things{
     padding:10px;  
 }
+.filter_pr_dt{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+
+}
 .filer_things label{
     font-size: 16px;
     color:#fff;
@@ -42,12 +64,20 @@
     margin:4px; 
 }
 .filer_things button{
-    padding:5px;
-    margin-top:40px;
-    background:#f5a425;
-    border-radius:10px;
-    border:0;
-    color:#fff;
+    display:block;
+    margin:0 auto;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: #f5a425;
+    padding: 10px 15px;
+    border-radius: 0;
+    margin-top:20px;
+}
+.filer_things button:hover{
+    color: #000;
 }
 /* Card Body */
 .card-body {
@@ -56,7 +86,7 @@
 
 .card-body p {
     margin: 0;
-    color:  #24262b;
+    color:  #fff;
     font-weight:bold;
 }
 .card-body h5{
@@ -80,8 +110,7 @@
 .teacher-card{
     display:flex;
     transition: box-shadow 0.3s ease; 
-    background-color: #ffffff;
-    border:solid 0.1px gray;
+    background-color: rgba(4, 8, 8, 0.3);
     overflow: hidden;
     border-radius:10px;
     padding:3%;
@@ -126,12 +155,13 @@
     margin:auto auto;
 
 }
+
 .teacher-body {
     /* Styles for the container of profile information */
     padding: 10px; /* Add padding around the content */
     /* border: 1px solid #ccc; Add a border for visual separation */
     border-radius: 8px; /* Round the corners of the container */
-    background-color: #f9f9f9; /* Set a light background color */
+
 }
 
 .teacher-body p {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Follow;
@@ -33,7 +34,7 @@ class homecontroller extends Controller
         return view('client.whowear');
     }
     public function courcess(){
-        $Course=Course::where('accepted',true)->get();
+        $Course=Course::where('accepted',true)->paginate(12);
         $filliers = Fillier::withCount('Coureces')
         ->having('coureces_count', '>', 0) 
         ->orderByDesc('coureces_count')
@@ -54,7 +55,7 @@ class homecontroller extends Controller
     }
 
     public function filliers(){
-        $filliers=Fillier::all();
+        $filliers=Fillier::paginate(9);
         return view('client.filliers',compact('filliers'));
     }
 
@@ -74,7 +75,7 @@ class homecontroller extends Controller
         return view('client.cource_details',compact('cor'));
     }
     public function fillter_fillier(Fillier $item){
-        $Course=Course::where('fillier_id',$item->id)->get();
+        $Course=Course::where('fillier_id',$item->id)->paginate(12);
         $filliers = Fillier::withCount('Coureces')
         ->having('coureces_count', '>', 0) 
         ->orderByDesc('coureces_count')
@@ -83,26 +84,28 @@ class homecontroller extends Controller
 
     }
 
-    
     public function filter_pr_date(Request $request)
-    {
+{
         $query = Course::query();
-    
+
         if ($request->has('price_low_to_high')) {
             $query->orderBy('price', 'asc');
         }
-    
+
         if ($request->has('order_date')) {
             $query->orderBy('date', 'asc');
         }
-    
-        // Log the generated SQL query for debugging
-        Log::info($query->toSql());
-    
-        $courses = $query->get();
-    
-        dd($courses);
-    }
-    
+
+        $Course = $query->paginate(12);
+
+        $filliers = Fillier::withCount('Coureces')
+        ->having('coureces_count', '>', 0) 
+        ->orderByDesc('coureces_count')
+        ->get();
+
+        return view('client.courcess',compact('Course','filliers'));
+   
+}
+
    
 }

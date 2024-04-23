@@ -1,4 +1,5 @@
 <x-home-layout>
+    
     <x-slot name="slot">
       
                 <section>
@@ -13,9 +14,9 @@
                                 <img src="/storage/{{ $cor->image }}" alt="teacher image">
                             </div>
                             <div class="card-body">
-                                <h5>{{ $cor->name }}</h5>
+                                <p>{{ $cor->name }}</p>
                                 <hr>
-                                <h5>{{ $cor->date }}</h5>
+                                <p>{{ $cor->date }}</p>
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <p><strong>S </strong>{{ $cor->start_time}}</p>
@@ -31,7 +32,9 @@
                         </div>
                     @endforeach
                 </div>
-                <button>discover more</button>
+                <form action="{{ route('courcess') }}">
+                <button class="disc_mr">discover more</button>
+                </form>
                 </div>
                 </div>
                 </section>
@@ -45,15 +48,11 @@
                                     <a href="{{ route('fillter_fillier', $fillier) }}">
                                         <div class="card-body">
                                             <div class="card-info">
-                                                <h4 class="title">{{ $fillier->name }}</h4>
-                                                <p class="card-text">{{ $fillier->description }}</p>
-                                                <p class="card-text">{{ $fillier->Coureces->count() }} Courses</p>
+                                                <h4 class="title ">{{ $fillier->name }}</h4>
+                                                <p class="card-text text-center">{{ $fillier->description }}</p>
+                                                <p class="card-text text-center">{{ $fillier->Coureces->count() }} Courses</p>
                                             </div>
-                                            <div class="card-images">
-                                                @foreach($fillier->Coureces as $course)
-                                                <img width="50" src="/storage/{{ $course->image }}" alt="course image">
-                                                @endforeach
-                                            </div>
+                                            
                                         </div>
                                     </a>
                                 </div>

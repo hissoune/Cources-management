@@ -47,7 +47,7 @@
              
               
             </div>
-            <div class="w-full p-6 overflow-x-scroll overflow-y-scroll  px-0 pt-0 pb-2">
+            <div class="w-full p-6  px-0 pt-0 pb-2">
               @if (session('success'))
                   <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                       <span class="block sm:inline">{{ session('success') }}</span>

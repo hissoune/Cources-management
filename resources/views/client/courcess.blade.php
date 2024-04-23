@@ -1,4 +1,7 @@
 <x-home-layout>
+    <x-slot name="title">
+        GRADUATE SCHOOL OF MANAGEMENT
+    </x-slot>
     <x-slot name="slot">
         {{-- <style>
             .card {
@@ -68,9 +71,9 @@
         </style> --}}
 <section id="filteredContent" class="lesson">
         
-    <div class="container">
+    <div class="">
         <div class="title">
-           <h2 class="text-warning ">Cources</h2>
+           <h2 class="">Cources</h2>
         </div>
            
          
@@ -86,25 +89,25 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-2 mt-5 border">
+            <div class="col-lg-2 mt-5 filter_pr_dt">
                
                <ul class="filer_things">
-                <form  onsubmit="return filter_pr_date('{{ route('filter_by_price') }}')">
-                    @csrf
-                    <ul>
+                <form  action="{{ route('filter_by_price') }}">
+                   
+                   
                         <li>
                             <input type="checkbox" name="priceRange_tohigh" id="priceLow">
-                            <label for="priceLow">Low to High</label>
+                            <label for="priceLow">Filter by price</label>
                         </li>
                         <li>
                             <input type="checkbox" name="order_date" id="priceHigh">
-                            <label for="priceHigh">High to Low</label>
+                            <label for="priceHigh">Filter by date</label>
                         </li>
-                    </ul>
+                   
                     <button type="submit">Filter</button>
                 </form>
                 
-               </ul>
+               
                     
             </div>
 
@@ -133,6 +136,10 @@
                     </div>
                 </div>
             @endforeach
+
+            <div class="pagination">
+                {{ $Course->links() }}
+            </div>
         </div>
     </div>
     </div>
