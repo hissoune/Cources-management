@@ -21,10 +21,36 @@ class RegistredUsers extends Controller
     {
         //
     }
+public function update_user(User $user){
+  return view('update_progile',compact('user'));
+}
 
-    /**
-     * Show the form for creating a new resource.
-     */
+public function user_update(Request $request,User $user){
+    $validatedData= $request->validate([
+        'name' => ['required', 'string'],
+        'image'=>'required',
+        
+    ]);
+   
+
+    if($request->hasFile('image')){
+        $validatedData['image']=$request->file('image')->store('user_image','public');
+        
+    } else{
+        $validatedData['image']=$request->image;
+    }
+try{
+    $user->update([
+        'name'=>$request->name,
+        'image'=>$validatedData['image'],
+    ]);
+    return redirect()->back()->with('success','profile updated succesfuly');
+}catch(\Exception $e){
+    return redirect()->back()->with('error','profile cant be updated');
+
+}
+   
+}
     public function create()
     {
       return view('Auth.register');

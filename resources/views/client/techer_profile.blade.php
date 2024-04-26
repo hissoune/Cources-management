@@ -20,23 +20,22 @@
               
            
               <div class="d-flex justify-content-center mb-2">
-                @if($follow)
-                <form action="{{ route('unfollow') }}" method="post">
-                  @csrf
-                  <input type="text" name="teacher_id" hidden value="{{ $Teacher->id }}">
-                  <button type="submit" class="btn btn-outline-danger shadow-0">unFollow</button>
-                </form>
-                @else
-                <form action="{{ route('follow') }}" method="post">
-                  @csrf
-                  <input type="text" name="teacher_id" hidden value="{{ $Teacher->id }}">
-                  <button type="submit" class="btn btn-warning shadow-0">+ Follow</button>
-                </form>
-                @endif
-                
-                {{-- <button type="button" class="btn btn-outline-primary ms-1">ra</button> --}}
-                          <!-- Button trigger modal -->
-                          <button id="rateButton" class="btn btn-outline-warning ms-1">Rate</button>
+               @auth
+               @role('student')
+               @if($follow)
+               <form action="{{ route('unfollow') }}" method="post">
+                 @csrf
+                 <input type="text" name="teacher_id" hidden value="{{ $Teacher->id }}">
+                 <button type="submit" class="btn btn-outline-danger shadow-0">unFollow</button>
+               </form>
+               @else
+               <form action="{{ route('follow') }}" method="post">
+                 @csrf
+                 <input type="text" name="teacher_id" hidden value="{{ $Teacher->id }}">
+                 <button type="submit" class="btn btn-warning shadow-0">+ Follow</button>
+               </form>
+               @endif
+               <button id="rateButton" class="btn btn-outline-warning ms-1">Rate</button>
 
                           <div id="modalContainer" class="modal-container">
                             <div id="modalContent" class="modal-content" style="background-color: #ccd0df;">
@@ -50,7 +49,6 @@
                                   <input type="hidden" name="teacher_id" value="{{ $Teacher->id }}">
 
                                   <div class="row g-4 mb-4">
-                                    <input type="hidden" id="teacherIdInput" name="teacher_id">
                                     <div class="col-12">
                                       <label for="note" class="form-label">Your comment</label>
                                       <input type="text" name="note" id="note" class="w-100 p-1 rounded border-0 border-outline-warning" placeholder="Type " required="">
@@ -76,6 +74,13 @@
                               </div>
                             </div>
                           </div>
+               @endrole
+               @endauth
+               
+                
+                {{-- <button type="button" class="btn btn-outline-primary ms-1">ra</button> --}}
+                          <!-- Button trigger modal -->
+                          
                           
               </div>
               @endif
@@ -86,23 +91,23 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <p class="mb-0">no account</p>
+                  <p class="mb-0 text-dark">no account</p>
                 </li>
               </ul>
             </div>
@@ -113,16 +118,16 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Full Name</p>
+                  <p class="mb-0 text-dark">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ $Teacher->name }}</p>
+                  <p class="text-muted mb-0 ">{{ $Teacher->name }}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Email</p>
+                  <p class="mb-0 text-dark">Email</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ $Teacher->email }}</p>
@@ -132,10 +137,19 @@
               
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Followers</p>
+                  <p class="mb-0 text-dark">Followers</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ $Teacher->followers->count() }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3 text-dark">
+                  <p class="mb-0 text-dark">rates</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ ($rate/10 <=10)?$rate/10:10 }}/10</p>
                 </div>
               </div>
             </div>
@@ -178,7 +192,7 @@
     }  
 @endphp
 @foreach ($uniqueFilliers as $fillierName)
-<p class="mt-4 mb-1 p-3 border" style="font-size: .77rem;">{{ $fillierName }}</p>
+<p class="mt-4 mb-1 p-3 border text-dark" style="font-size: .77rem;">{{ $fillierName }}</p>
 @endforeach
 
 

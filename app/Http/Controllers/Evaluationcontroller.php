@@ -18,7 +18,7 @@ class Evaluationcontroller extends Controller
         $request->validate([
             'teacher_id' => 'required',
             'note' => 'required|string',
-            'mark' => 'required|numeric|max:100',
+            'mark' => 'required|numeric|max:10',
         ]);
         try{
         Evaluation::create([

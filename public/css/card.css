@@ -24,10 +24,9 @@
     padding: 10px 15px;
     border-radius: 0;
 }
-/* .card-info{
-    display:flex;
-   justify-content:center;
-} */
+.card-info{
+   padding:4%;
+}
 
 /* Image Container */
 .img-container {
@@ -76,12 +75,25 @@
     border-radius: 0;
     margin-top:20px;
 }
+.update_profile{
+    display:block;
+    margin:0 auto;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: #f5a425;
+    padding: 10px 15px;
+    border-radius: 0;
+    margin-top:20px;
+}
 .filer_things button:hover{
     color: #000;
 }
 /* Card Body */
 .card-body {
-    padding: 20px;
+    padding: 40px;
 }
 
 .card-body p {
@@ -127,6 +139,8 @@
  
 }
 .image img{
+    display:block;
+    margin:0 auto;
     width: 150px; /* Set the width and height to be equal for a perfect circle */
     height: 150px; /* Adjust as needed */
     border-radius: 50%; /* Make the image circular */
@@ -136,6 +150,7 @@
 }
 
 .img img {
+   
     width: 150px; /* Set the width and height to be equal for a perfect circle */
     height: 150px; /* Adjust as needed */
     border-radius: 50%; /* Make the image circular */

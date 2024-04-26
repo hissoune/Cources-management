@@ -9,6 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FillierController;
 use App\Http\Controllers\SummaryController;
 use App\Http\Controllers\AbonnmentController;
+use App\Http\Controllers\Auth\RegistredUsers;
 use App\Http\Controllers\Evaluationcontroller;
 use App\Http\Controllers\Reservationcontroller;
 
@@ -24,6 +25,7 @@ use App\Http\Controllers\Reservationcontroller;
 */
 
 Route::get('/',[homecontroller::class,'index'])->name('/');
+Route::get('back',[homecontroller::class,'back'])->name('back');
 Route::get('about_us',[homecontroller::class,'about'])->name('about');
 Route::get('courcess',[homecontroller::class,'courcess'])->name('courcess');
 Route::get('cource_details/{cor}',[homecontroller::class,'cource_details'])->name('cource_details');
@@ -33,6 +35,8 @@ Route::get('filliers',[homecontroller::class,'filliers'])->name('filliers');
 Route::get('search',[homecontroller::class,'search'])->name('search');
 Route::get('teacheres_profile/{Teacher}',[homecontroller::class,'teacheres_profile'])->name('teacheres_profile');
 Route::get('fillter_fillier/{item}',[homecontroller::class,'fillter_fillier'])->name('fillter_fillier');
+Route::get('update_user/{user}',[RegistredUsers::class,'update_user'])->name('update_user');
+Route::put('user_update/{user}',[RegistredUsers::class,'user_update'])->name('user_update');
 Route::get('filter_by_price',[homecontroller::class,'filter_pr_date'])->name('filter_by_price');
 
 
@@ -41,8 +45,10 @@ Route::middleware(['auth','role:director','verified'])->group(function(){
     Route::get('/show_students',[Admincontroller::class,'show_students'] )->name('show_students');
     Route::get('/show_teachers',[Admincontroller::class,'show_teachers'] )->name('show_teachers');
     Route::get('/cources_tovalidate',[CourseController::class,'cources_tovalidate'] )->name('cources_tovalidate');
-    Route::get('/Course_accept/{item}',[CourseController::class,'Course_accept'] )->name('Course_accept');
     Route::get('/Abonnments_show',[AbonnmentController::class,'Abonnments_show'] )->name('Abonnments_show');
+    Route::get('/Course_accept/{item}',[CourseController::class,'Course_accept'] )->name('Course_accept');
+    Route::put('/block/{item}',[Admincontroller::class,'block'] )->name('block');
+    Route::put('/UNblock/{item}',[Admincontroller::class,'UNblock'] )->name('UNblock');
     Route::get('/create_abonment',[AbonnmentController::class,'create_abonment'] )->name('create_abonment');
     Route::get('/Edit_abonment/{item}',[AbonnmentController::class,'Edit_abonment'] )->name('Edit_abonment');
     Route::put('/Abonnment_update{item}',[AbonnmentController::class,'Abonnment_update'] )->name('Abonnment_update');
@@ -54,7 +60,8 @@ Route::middleware(['auth','role:director','verified'])->group(function(){
 });
 
 Route::middleware(['auth','role:teacher','verified'])->group(function(){
-    Route::get('/teacher', function () {return view('teacher');})->name('teacher');
+    Route::get('/teacher',[Admincontroller::class,'teacher'])->name('teacher');
+
     Route::resource('/Courses',CourseController::class );
     Route::get('show_reservation',[Reservationcontroller::class,'show_reservation'])->name('show_reservation');
     Route::get('show_studentss',[Reservationcontroller::class,'show_students'])->name('show_studentss');

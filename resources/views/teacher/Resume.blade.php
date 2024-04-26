@@ -1,5 +1,8 @@
 <x-app-layout>
 <x-slot name="slot">
+    <x-slot name="title">
+        create resume
+     </x-slot>
 <section>
    
       <div><h4 class="text-center font-bold">{{ ($item->Resume)?'update':'Add' }} Resume</h4></div>

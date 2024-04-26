@@ -47,17 +47,21 @@
                         </td>
                        
                      <td class="px-6 py-4 flex justify-around">
-                          <form action="" method="POST">
+                        @if ($item->blocked)
+                        <form action="{{ route('UNblock',$item) }}" method="POST">
+                            @csrf
+                            @method('put')
+                            <button class="btn bg-green-500 text-white rounded p-1">unblock</button>
+                          </form>
+                          @else 
+                          <form action="{{ route('block',$item) }}" method="POST">
                             @csrf
                             @method('put')
                             <button class="btn bg-red-500 text-white rounded p-1">block</button>
                           </form>
-                          <form action="" method="post" >
-                               @csrf
-                               @method('put')
+                        @endif
                          
-                            <button class="btn bg-green-500 text-white rounded p-1">Send Email</button>
-                          </form>
+                          
                         </td> 
                     
                     @empty

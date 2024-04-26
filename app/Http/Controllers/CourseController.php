@@ -23,10 +23,10 @@ $Courses = Course::whereHas('user', function($query) {
     }
 public function cources_for_student(){
     $Course=Course::whereHas('Reservations',function($query){
-        $query->whereHas('user',function($secquery){
+        $query->where('accepted',true)->whereHas('user',function($secquery){
             $secquery->where('id',Auth::id());
         });
-    })->where('date','<',now())->get();
+    })->paginate(9);
    return view('client.Couces_done',compact('Course'));
 }
     /**
@@ -168,10 +168,16 @@ public function cources_for_student(){
      */
     public function destroy(Course $Course)
     {
-        $Course->delete();
-        return redirect()->route('Courses.index')->with('success','your cours deleted succesfuly');
+        // dd($Course);
+        try{
+            $Course->delete();
+            return back()->with('success'," cource deleted sucecfuly");
 
+        }catch(\Exception $e){
+            return back()->with('error',"can't delet this cource because its allredy rserved");
+        }
     }
+    
 
     public function cources_tovalidate(){
         $Courses=Course::where('accepted',false)->get();
@@ -182,23 +188,22 @@ public function cources_for_student(){
         $item->update(['accepted'=>true]);
         return back()->with('success','cource accepted succesfuly');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

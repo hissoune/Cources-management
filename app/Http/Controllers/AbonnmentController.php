@@ -20,7 +20,7 @@ class AbonnmentController extends Controller
     public function create_abonment(){
         return view('director.Abonnments.create');
     }
-
+   
     public function Abonnment_store(Request $request){
     $request->validate([
         'type' => 'required|in:Free,premiume,vip',

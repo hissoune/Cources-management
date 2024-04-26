@@ -1,12 +1,12 @@
 <x-home-layout>
     <x-slot name="slot">
     
-    <div class="container my-5">
+    <div class="container my-5 checout">
         <div class='row'>
             <div class='col-md-12 '>
                 <div class="card">
                     <div class="card-header">
-                     <h4>confrim your payment</h4>
+                     <h4 class="text-center">confrim your payment</h4>
                     </div>
                     <div class="card-body">
                     <table id="cart" class="table table-hover table-condensed">

@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Follow;
 use App\Models\Fillier;
 use App\Models\Abonnment;
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,9 @@ class homecontroller extends Controller
         
         return view('client.welcome',compact('cources','filliers','Teachers'));
     }
+    public function back(){
+        return back();
+    }
 
     public function about(){
         return view('client.whowear');
@@ -49,9 +53,14 @@ class homecontroller extends Controller
         return view('client.teacheres',compact('Teachers'));
     }
     public function teacheres_profile(User $Teacher){
+        $evaluations = Evaluation::
+        where('teacher_id', $Teacher->id) 
+        ->get(); 
+            $rate = $evaluations->sum('marke');
+     
         $follow=Follow::where('teacher_id',$Teacher->id)->where('student_id',Auth::id())->first();
 
-        return view('client.techer_profile',compact('Teacher','follow'));
+        return view('client.techer_profile',compact('Teacher','follow','rate'));
     }
 
     public function filliers(){

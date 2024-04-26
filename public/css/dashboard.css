@@ -15,6 +15,11 @@ body {
   .min_nave{
     display:none;
   }
+  .title {
+    font-size: 30px;
+    color:#f5a425;
+    font-weight: bold;
+  }
   
   .sidebar {
     position:fixed;
@@ -43,13 +48,63 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
 }
+.add_model{
+  position:fixed;
+  top:5%;
+  left:40%;
+
+}
+
+.session_error{
   
+  background-color:red;
+  position:fixed;
+  z-index:999999999;
+  color:#fff;
+  top:20%;
+  left:46%;
+  width:20%;
+  height:100px;
+  text-align:center;
+  padding:10px;
+  border:solid 1px #fff;
+  border-radius:15px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4); 
+
+
+}
+.session_error button{
+  display:block;
+  margin:0 auto;
+}
+.session_success{
+  background:green;
+  position:fixed;
+  z-index:999999999;
+  color:#fff;
+  top:20%;
+  left:46%;
+  width:20%;
+  height:100px;
+  text-align:center;
+  padding:10px;
+  border:solid 1px #fff;
+  border-radius:15px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4); 
+
+}
+.session_success button{
+  display:block;
+  margin:0 auto;
+}
   .logo {
     color:#fff;
     font-size: 30px;
     font-weight: 800;
 }
-
+.logo span{
+color:#f5a425;
+}
 
   
 

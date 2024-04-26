@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedUsers extends Controller
@@ -30,7 +31,10 @@ class AuthenticatedUsers extends Controller
     public function store(Request $request)
     {
         $credentials = $request->only('email', 'password');
-    
+           $user=User::where('email',$request->email)->first();
+           if($user->blocked){
+            return back()->with('error','this acount is blockrd !! ');
+           }
         if (Auth::attempt($credentials)) {
             return redirect()->route('/'); 
         } else {

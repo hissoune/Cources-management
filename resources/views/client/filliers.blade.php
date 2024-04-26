@@ -15,8 +15,10 @@ margin-top: 10%;
                             <div class="card-body ">
                              
                                     <h5 class="card-title text-center text-white">{{ $fillier->name }}</h5>
-                                    <p class="card-text text center">{{ $fillier->description }}</p>
-                                    <p class="card-text text-center">{{ $fillier->Coureces->count() }} Courses</p>
+                                    <p class="card-text text-center">
+                                        {{ Str::limit($fillier->description, 100) }}
+                                    </p>                                   
+                                     <p class="card-text text-center">{{ $fillier->Coureces->count() }} Courses</p>
                                
                                
                             </div>

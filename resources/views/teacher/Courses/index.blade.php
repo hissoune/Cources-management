@@ -127,9 +127,9 @@
                         
                                  <button class="btn bg-green-500 text-white rounded p-1">Edit</button>
                              </form>
-                            <form action="" method="POST">
+                            <form action="{{route('Courses.destroy',$item)}}" method="POST">
                                 @csrf
-                                @method('put')
+                                @method('delete')
                                 <button class="btn bg-red-500 text-white rounded p-1">delete</button>
                             </form>
                         </td>

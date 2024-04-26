@@ -85,9 +85,9 @@
                             </div>
                         </form> --}}
 
-                        <div class="login-box ">
+                        <div class="register-box ">
                             <h2>Register</h2>
-                            <form action="{{ route('registred') }}" method="POST" >
+                            <form action="{{ route('registred') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="user-box">
                                     <input type="text" name="name" required="">

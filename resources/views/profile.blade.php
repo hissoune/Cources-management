@@ -9,13 +9,17 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
-            <div class="card-body text-center">
+            <div class="card-body image text-center">
+              
               <img src="storage/{{ $user->image }}" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3 text-dark">{{ $user->name }}</h5>
               @role('teacher')
               <p class="text-muted mb-2 ">{{ ($user->description)?$user->description:'no description'  }}</p>
              @endrole
+            </div>
+            <div>
+              <a href="{{ route('update_user',$user) }}" class="update_profile mb-4 text-center mx-3">update profile</a>
             </div>
           </div>
           <div class="card mb-4 mb-lg-0">

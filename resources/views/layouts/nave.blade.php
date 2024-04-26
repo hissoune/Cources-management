@@ -52,7 +52,7 @@
                             <div class="dropdown-menu nav-color" aria-labelledby="navbarDropdownMenuLink">
                                 @role('teacher')
                                 <a class="dropdown-item dropdown-style" href="{{ route('teacher') }}">dasboard</a>
-                                <a class="dropdown-item" href="{{ route('Abonnments_teacher') }}">Abonnments</a>
+                                <a class="dropdown-item dropdown-style" href="{{ route('Abonnments_teacher') }}">Abonnments</a>
 
                                 @endrole
                                 @role('director')

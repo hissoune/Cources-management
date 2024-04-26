@@ -34,7 +34,7 @@
   
     <div class="content   ">
                 
-       <h2 class="text-center my-6 p-6"> <a class=" logo " href="{{ route('/') }}"><span>GRAD</span> SCHOOL</a></h2>
+       <h2 class="text-center my-6 p-6 logo"> <a class="  " href="{{ route('/') }}"><span>GRAD</span> SCHOOL</a></h2>
 
      
     <div class="content_tables">
@@ -49,21 +49,21 @@
             </div>
             <div class="w-full p-6  px-0 pt-0 pb-2">
               @if (session('success'))
-                  <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                      <span class="block sm:inline">{{ session('success') }}</span>
-                      <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
-                          <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 1 .707.707L10.707 10l4.348 4.348a.5.5 0 0 1-.707.707L10 10.707l-4.348 4.348a.5.5 0 0 1-.707-.707L9.293 10 4.945 5.652a.5.5 0 0 1 .707-.707L10 9.293l4.348-4.348z"/></svg>
-                      </button>
+                  <div id="session" class="session_success" >
+                      <span class="">{{ session('success') }}</span>
+                      <button  id="close_session" type="button" class="" data-dismiss="alert" aria-label="Close">
+                        <svg class="fill-current h-12 w-12 text-white-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 1 .707.707L10.707 10l4.348 4.348a.5.5 0 0 1-.707.707L10 10.707l-4.348 4.348a.5.5 0 0 1-.707-.707L9.293 10 4.945 5.652a.5.5 0 0 1 .707-.707L10 9.293l4.348-4.348z"/></svg>
+                    </button>
                   </div>
               @endif
               @if (session('error'))
               {{-- <script>
                 windows.alert({{ session('error') }})
               </script> --}}
-              <div class="bg-red-100 border border-red-400 text-white-700 px-4 py-3 rounded relative" role="alert">
-                  <span class="block sm:inline">{{ session('error') }}</span>
-                  <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
-                      <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 1 .707.707L10.707 10l4.348 4.348a.5.5 0 0 1-.707.707L10 10.707l-4.348 4.348a.5.5 0 0 1-.707-.707L9.293 10 4.945 5.652a.5.5 0 0 1 .707-.707L10 9.293l4.348-4.348z"/></svg>
+              <div id="session" class="session_error" >
+                  <p class="">{{ session('error') }}</p>
+                  <button  id="close_session" type="button" class="" data-dismiss="alert" aria-label="Close">
+                      <svg class="fill-current h-12 w-12 text-white-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 1 .707.707L10.707 10l4.348 4.348a.5.5 0 0 1-.707.707L10 10.707l-4.348 4.348a.5.5 0 0 1-.707-.707L9.293 10 4.945 5.652a.5.5 0 0 1 .707-.707L10 9.293l4.348-4.348z"/></svg>
                   </button>
               </div>
           @endif
@@ -89,6 +89,7 @@
     </div>
 
   <script src="{{ asset('./js/dash.js') }}"></script>
+  <script src="{{ asset('./js/close_session.js') }}"></script>
   <script src="{{ asset('./js/addresum.js') }}"></script>
 
  

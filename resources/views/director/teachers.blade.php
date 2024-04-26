@@ -43,7 +43,7 @@
                             {{ ($item->email_verified_at)?'yes':'no' }}
                         </td>
                         <td class="px-6 py-4 text-white">
-                            {{ ($item->formation)?'yes':'no' }}
+                            {{(($item->evaluations->sum('marke')/10) <=10 )?   ($item->evaluations->sum('marke')/10):10 }}/10
                         </td>
                        
                      <td class="px-6 py-4 flex justify-around">

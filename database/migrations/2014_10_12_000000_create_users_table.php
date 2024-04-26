@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->text('description')->nullable();
             $table->string('email')->unique();
+            $table->boolean('blocked')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use App\Models\Role;
-use App\Models\Abonnment_Teacher;
 use App\Models\Follow;
 use App\Mail\VerifyEmail;
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 use App\Models\model_has_role;
+use App\Models\Abonnment_Teacher;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Notifications\Notifiable;
@@ -30,6 +31,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'description',
         'image',
+        'blocked',
         'email_verified_at',
     ];
 
@@ -101,6 +103,12 @@ public function hasVerifiedEmail(){
         }
         public function reservations(){
             return $this->hasMany(Reservation::class,'user_id');
+         }
+         public function rate(){
+            return $this->hasMany(Evaluation::class,'student_id');
+         }
+         public function evaluations(){
+            return $this->hasMany(Evaluation::class,'teacher_id');
          }
          public function abonnementTeacher()
          {

@@ -49,7 +49,7 @@
                                         <div class="card-body">
                                             <div class="card-info">
                                                 <h4 class="title ">{{ $fillier->name }}</h4>
-                                                <p class="card-text text-center">{{ $fillier->description }}</p>
+                                                <p class="card-text text-center">{{ Str::limit($fillier->description, 100) }}</p>
                                                 <p class="card-text text-center">{{ $fillier->Coureces->count() }} Courses</p>
                                             </div>
                                             

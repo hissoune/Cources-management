@@ -82,12 +82,14 @@ class FillierController extends Controller
     public function destroy(Fillier $fillier)
     {
         // dd($fillier->Coureces);
-        if($fillier->Coureces){
-            return redirect()->back()->with('error','the fillier cant be deleted because its related with cources');
+       
+            try{
+                $fillier->delete();
+                return redirect()->back()->with('success','the fillier deleted succesfuly');
+            }catch(\Exception $e){
+                return redirect()->back()->with('error','the fillier cant be deleted because its related with cources');
 
-        }
-
-        $fillier->delete();
-        return redirect()->back()->with('success','the fillier deleted succesfuly');
+            }
+       
     }
 }
